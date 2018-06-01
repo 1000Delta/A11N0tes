@@ -37,3 +37,9 @@
 5. [PHP 面向对象进阶——抽象类&接口&trait](PHP/PHP 面向对象进阶——抽象类&接口&trait.md)
 6. [PHP echo 与 return](PHP/PHP echo 与 return.md)
 
+### Linux
+
+---
+
+1. [Linux 添加第三方软件](Linux/Linux 添加第三方软件.md)
+
