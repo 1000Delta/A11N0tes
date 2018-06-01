@@ -13,19 +13,5 @@
 | location     | welcome                  | welcome                  | welcome                  |
 | suid         | J3rzUv6EaFYYfem2QFZQ     | J3rzUv6EaFYYfem2QFZQ     | J3rzUv6EaFYYfem2QFZQ     |
 | src          | juejin.im                | juejin.im                | juejin.im                |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-|              |                          |                          |                          |
-
 
 
