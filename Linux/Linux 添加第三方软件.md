@@ -22,10 +22,12 @@
    StartupNotify=true
    Terminal=false
    Type=Application	#类型，填Application
-   Categories=			#图标分类
+   Categories=			#图标分类 
    ```
 
    
+
+   > 更多请参考 [Linux启动器](./Linux启动器.md)
 
    
 
