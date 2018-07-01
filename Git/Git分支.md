@@ -69,3 +69,13 @@ git checkout master # 先切换到主分支
 git merge tmp # 讲分支tmp合并到master分支
 ```
 
+
+
+## 删除分支
+
+完成分支合并后临时分支便可以删除
+
+```bash
+git branch -d tmp
+```
+
