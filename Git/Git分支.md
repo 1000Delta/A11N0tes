@@ -58,3 +58,14 @@ git checkout newone
 git log --decorate
 ```
 
+
+
+## 分支合并
+
+如果你完成了一个分支的工作要合并到主分支中，使用`git merge`
+
+```bash
+git checkout master # 先切换到主分支
+git merge tmp # 讲分支tmp合并到master分支
+```
+
