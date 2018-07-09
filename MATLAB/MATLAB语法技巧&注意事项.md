@@ -30,7 +30,7 @@
   -1, & \frac{2k + 1}{2} T & < x \leq &kT 
   \end{cases}
   $$
-  
+
 
   ```matlab
   function [y] = f(x) % 通过关系运算来取代决策结构确定y的表达式（在此处分别为1和-1）
@@ -38,5 +38,5 @@
   end
   ```
 
-  
+- 单位阶跃函数 `heaviside(t)`
 
