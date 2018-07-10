@@ -62,23 +62,27 @@ $$
 ```matlab
 function [] = FourierSynthesis(V, T, N)
 %FOURIERYSTHESIS 函数的傅里叶合成
-%   此处显示详细说明
 syms x fx n
 % 设计矩形波函数f(x)为奇函数，因此仅有 [bn*sin(n*pi*x*2/T)] 项
 bn = (4*sin((pi*n)/2)^2)/(n*pi);                
 Fx = 0;
 % 迭代构造Fx表达式
-for i = 1:2:N                                     
+if N == 0
+    x = 0:T/1000:2*T;
+    y = f(x, T, V)+V;
+    plot(x, y);xlabel('时域(t)/s');ylabel('电压(U)/V');title('矩形波'); 
+else
+    for i = 1:N                                     
     n = i;
     Fx = Fx + subs(bn)*subs(sin(2*pi*n/T*x));
+    end
+    % 确定时域取值范围为2个周期，并计算对应函数值数组
+    x = 0:T/200:2*T;
+    y = V.*subs(Fx)+V;
+    % 绘图
+    tl = sprintf('方波的%d次谐波傅里叶合成', n);
+    plot(x, y);xlabel('时域(t)/s');ylabel('电压(U)/V');title(tl); 
 end
-% 确定时域取值范围为2个周期，并计算对应函数值数组
-x = 0:T/200:2*T;
-y = V.*subs(Fx);
-y0 = f(x,T,V);
-% 绘图
-tl = sprintf('方波的%d次谐波傅里叶合成', n);
-plot(x, y, x, y0);xlabel('时域(t)/s');ylabel('电压(U)/V');title(tl);
 end
 
 function [Y] = f(x,T,A)
@@ -101,9 +105,9 @@ end
 ### 实际运行主流程
 
 ```matlab
-Votage = 10;
+Votage = 50;
 period = 0.05;
-for i = 0:9
+for i = 1:9
     FourierSynthesis(Votage, period, 0);
     hold on;
     FourierSynthesis(Votage, period, i);
@@ -132,12 +136,12 @@ for i = 1:2:N
     Fx = Fx + 1/i*sin(i*af*t);
 end
 Fx = Fx*4*A/pi;
-A = 1; % 振幅 
+A = 50; % 振幅 
 af = 100*pi; % 角频率
 T = 2*pi/af;
 t = 0:2*pi/af/1000:4*pi/af;
-v = subs(Fx);
-y = A*(mod(t,T) < T/2)-A*(mod(t,T) > T/2);
+v = subs(Fx)+A;
+y = A*(mod(t,T) < T/2)-A*(mod(t,T) > T/2)+A;
 tl = sprintf('方波的%d次谐波傅里叶合成', N);
 subplot(2,1,1);
 plot(t,v);xlabel('时域(t)/s');ylabel('电压(U)/V');title(tl);
