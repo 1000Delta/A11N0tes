@@ -133,4 +133,4 @@
     * $ find <path> -option   [   -print ]   [ -exec   -ok   command ]   {} \;
 * 参数
     * -name
-*XMind: ZEN - Trial Version*
+      *XMind: ZEN - Trial Version*
