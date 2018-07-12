@@ -44,17 +44,29 @@ pull时要写完整名字
 
 ## 运行镜像
 
-`docker run 用户名/镜像名 命令 参数`
+`docker run 用户名/镜像名 命令 参数 `
 
-运行在容器中的新程序必须run安装后commit保存的镜像
+从image文件，生成一个正在运行的容器实例。
+
+*`docker container run`命令有自动抓取镜像文件的功能，如果发现本地没有指定的image文件，就会从仓库自动抓取*
+
+运行**在容器中的新程序**必须run安装后commit保存的镜像
 
 
 
-## 检查运行中的镜像
+## 检查运行中的容器
 
 `docker ps` 
 
+`docker container ls`
+
 查看所有正在运行中的容器列表
+
+`docker ps --all`
+
+`docker container ls --all`
+
+列出本机所有容器，包括终止运行的容器
 
 `docker inspect <id>`
 
@@ -64,11 +76,17 @@ pull时要写完整名字
 
 
 
+## 终止运行中的容器
+
+`docker container kill [containerID]`
+
+
+
 ## 列出所有安装过的镜像
 
 `docker images`
 
-
+`docker image ls`
 
 
 
