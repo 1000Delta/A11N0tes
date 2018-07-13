@@ -42,15 +42,21 @@ pull时要写完整名字
 
 
 
-## 运行镜像
+## 生成容器
 
-`docker run 用户名/镜像名 命令 参数 `
+`docker run [options] 用户名/镜像名 [命令 [命令参数]] `
 
 从image文件，生成一个正在运行的容器实例。
 
 *`docker container run`命令有自动抓取镜像文件的功能，如果发现本地没有指定的image文件，就会从仓库自动抓取*
 
 运行**在容器中的新程序**必须run安装后commit保存的镜像
+
+
+
+## 启动容器
+
+`docker container start [containerID]`
 
 
 
@@ -79,6 +85,22 @@ pull时要写完整名字
 ## 终止运行中的容器
 
 `docker container kill [containerID]`
+
+相当于向容器里的主线程发出SIGKILL信号.
+
+`docker container stop`
+
+相当于向容器里面的主线程发出SIGTERM信号,过一段时间再发出SIGKILL信号.
+
+
+
+容器停止后并不会消失,用下面的命令删除容器文件
+
+
+
+## 删除容器文件
+
+`docker ccontainer rm [containerID]`
 
 
 
