@@ -67,7 +67,7 @@ bool curl_setopt ( resource $ch, int $option, mixed $value )
 ```php
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURL_RETURNTANSFER, 1);
+curl_setopt($ch, CURLOPT_RETURNTANSFER, 1);
 $rs = curl_exec($ch);
 ```
 
@@ -92,3 +92,13 @@ curl_setopt($ch, CURLOPT_COOKIEFILE, $filename)
 //
 
 ## 
+```
+
+
+## 不验证SSL证书
+
+```php
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+```
+
