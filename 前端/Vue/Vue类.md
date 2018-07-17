@@ -15,6 +15,7 @@ var app = new Vue({
 
 - json数组
   - `el` string, 绑定的元素
-  - `data ` json, 要渲染的数据
-    - `message` string, 内容
-    - `seen` bool, 可视
+  - `data `  属性，通常下为固定值
+  - `computed`  计算属性
+  - `methods` 方法
+  - `watch` 监听属性 
