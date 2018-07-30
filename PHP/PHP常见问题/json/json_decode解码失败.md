@@ -1,4 +1,4 @@
-# PHP与json
+# json_decode解码失败
 
 php解析json使用的是`json_decode()`函数，解析失败时会返回`false`
 
