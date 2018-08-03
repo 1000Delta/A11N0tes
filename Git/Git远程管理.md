@@ -13,3 +13,5 @@
 ## 修改ssh默认端口号
 
 `git remote set-url <remotename> <url>`
+
+要求远程仓库已存在，即先通过`remote add`操作添加远程库，然后修改
