@@ -1,10 +1,12 @@
-# Git基本知识
+# Git基本命令
 
 `git init`初始化版本库
 
-`git clone [url] ` 克隆远程版本库
+`git clone [url] [dir_name] ` 克隆远程版本库
 
 - `[dir_name]` 设置新建目录的名字
+- 参数
+  - `-b <branch>` 克隆指定分支
 
 `git add` 跟踪文件
 
