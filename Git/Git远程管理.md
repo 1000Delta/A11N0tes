@@ -6,11 +6,11 @@
   - `branchName` 分支名
   - 不带参数将会拉取当前分支
 
-- `git merge` 合并到当前分支
+- `git merge [branch]` 合并到当前分支
 
 - `git pull` 拉取并合并
 
-- `git push [[local_fetch]:[remote_fetch]]`  推送
+- `git push [remote] [[local_fetch]:[remote_fetch]]`  推送
   - `git push -f` 强制推送
 
 - `git remote` 管理远程版本库

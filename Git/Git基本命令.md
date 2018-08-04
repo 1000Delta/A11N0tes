@@ -39,7 +39,7 @@ __.gitignore文件__ 其中存放的文件名不会被跟踪
 - `-v` 查看远程仓库
 - `add` 添加远程仓库
 
-`push [name] [local_fetch]:[remote_fetch]` 从本地分支推送到远程分支
+`push [remote] [local_fetch]:[remote_fetch]` 从本地分支推送到远程分支
 
 `git fetch` 拉取代码 `[remote_branch] [local_branch]`
 

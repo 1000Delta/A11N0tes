@@ -33,7 +33,7 @@ GRANT ALL privileges ON mq.* to test@loclahost identified by '1234';
 FLUSH privileges;
 ```
 
-必须执行第二句`FLUSH privileges`， 否则登录会提示 ERROR 1045
+必须执行第二句`FLUSH privileges`， 否则登录会提示 ERROR 1045(没看到?)
 
 
 
