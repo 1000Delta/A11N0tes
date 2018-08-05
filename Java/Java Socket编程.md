@@ -1,0 +1,39 @@
+### Socket编程
+
+- ServerSocket类
+  - 常用方法
+    - 构造方法
+      - ServerSocket(int port)
+        - 实例化一个服务器套接字绑定到本地服务器指定端口
+    - accept()
+      - 接收一个套接字连接请求，如果当前没有请求则会一直等待
+    - close()
+      - 关闭指定套接字
+- Socket类
+  - 常用方法
+    - 构造方法
+      - Socket(String host, int port)
+        - 实例化一个流套接字并连接到指定主机的指定端口号
+      - Socket()
+        - 实例化一个未连接流套接字对象
+      - Socket(InetAddress host, int port)
+        - 实例化流套接字并连接到指定的ip和端口
+    - bind(SocketAddress bindpoint)
+      - 将套接字绑定到本地地址
+    - close()
+      - 关闭此套接字
+    - connect(SocketAddress endpoint)
+      - 将此套接字连接到服务器
+    - getInetAddress()
+      - 返回此套接字的地址
+    - getPort()
+      - 返回此套接字连接到的指定端口
+    - getOutputStream()
+      - 返回此套接字的输出流
+    - getInputStream()
+      - 返回此套接字的输入流
+    - shutdownOutput()
+      - 关闭此套接字的输出流
+- DatagramSocket类
+- SocketAddress
+- InetSocketAddress

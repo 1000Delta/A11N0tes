@@ -260,5 +260,5 @@
             * 关闭此套接字的输出流
 * DatagramSocket类
 * SocketAddress
-* InetSocketAddres
+* InetSocketAddress
 *XMind: ZEN - Trial Version*

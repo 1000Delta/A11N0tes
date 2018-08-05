@@ -19,18 +19,20 @@ branch2->snapshot
 
 
 
-主命令：
+命令：
 
 ```bash
-git branch
+git branch [option] [branch]
 ```
 
-次级命令：
+参数：
 
-- `[branch_name]` 新建分支
-- `-a` 显示所有分支（本地和远程）
-- `-d` 删除分支（已合并）
-- `-D` 强制删除分支
+- `[branch]` 分支名
+- `[option]` 可选参数
+  - `-a` 显示所有分支（本地和远程）
+  - `-d` 删除分支（已合并）
+  - `-D` 强制删除分支
+  - `-v` 显示最近一次提交
 
 
 
@@ -52,7 +54,21 @@ git checkout newone
 
 
 
-## 查看各个分支
+## 查看分支
+
+```bash
+#查看本地分支
+git branch
+
+#查看所有分支
+git branch -a
+```
+
+
+
+
+
+## 查看所有分支历史
 
 ```bash
 git log --decorate
@@ -66,7 +82,7 @@ git log --decorate
 
 ```bash
 git checkout master # 先切换到主分支
-git merge tmp # 讲分支tmp合并到master分支
+git merge tmp # 将分支tmp合并到master分支
 ```
 
 
