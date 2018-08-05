@@ -42,3 +42,27 @@
    `password` 密码
 
    `host` Git服务器域名或地址
+
+## 远程分支
+
+### 推送
+
+### 拉取
+
+`git fetch <remote> <branch>`
+
+### 删除远程分支
+
+`git remote --delete <remote> <branch>`
+
+### 跟踪远程分支
+
+`git branch -b <branch> <remote>/<branch>`
+
+设置分支跟踪上游分支
+
+`git branch -u <remote>/<branch>`
+
+更新当前分支的上游分支
+
+### 上游快捷方式
