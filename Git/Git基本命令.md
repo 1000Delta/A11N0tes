@@ -52,9 +52,9 @@ __.gitignore文件__ 其中存放的文件名不会被跟踪
 
 `git checkout` 
 
-- 无参数 撤销一次暂存
+- 无参数 撤销所有修改
+- `-- <file>` 撤销某个文件的修改
 - `[branch_name]` 切换分支
-
 - `-b [branch_name]`新建并切换分支
 - `-b [branchname] [tagname]` 在特定标签下创建分支
 
