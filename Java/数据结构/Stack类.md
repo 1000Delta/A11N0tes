@@ -1,6 +1,6 @@
 # Stack类
 
-> 应优先使用Deque类（双端队列）而不是Stack类
+> 应优先使用Deque接口的实现类而不是Stack类
 
 ##  命名空间
 
