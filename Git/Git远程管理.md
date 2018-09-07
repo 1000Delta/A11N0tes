@@ -11,13 +11,13 @@
 - `git pull` 拉取并合并
 
 - `git push [remote] [[local_fetch]:[remote_fetch]]`  推送
+
   - `git push -f` 强制推送
 
 - `git remote` 管理远程版本库
   - `add <remote> <address>`  添加库
   - `rm <remote>` 删除远程库
 
-    
 
 ## 修改ssh默认端口号
 
@@ -29,7 +29,7 @@
 
 ## 将HTTPS账号密码保存在本地
 
-1. 检查`git config`中`credential.helper`参数为`store`；
+1. 检查`git config`中`credential.helper`参数为`store`, 也可以设置为`cache` 保存一个限时的缓存, 设置超时为`--timeout <sec>`；
 
 2. 在用户主目录（bash中为`~`，CMD中为`%HOME%`）添加文件`.git-credential`；
 
