@@ -1,4 +1,4 @@
-# docker基本命令
+# docker基本操作
 
 - `docker version` - 查看版本
 
@@ -47,6 +47,8 @@ pull时要写完整名字
 `docker run [options] 用户名/镜像名 [命令 [命令参数]] `
 
 从image文件，生成一个正在运行的容器实例。
+
+`docker run` 相当于执行了两步操作, 将镜像放入容器中(`docker create`), 然后将容器启动(`docker start`), 使之变成运行时容器.
 
 *`docker container run`命令有自动抓取镜像文件的功能，如果发现本地没有指定的image文件，就会从仓库自动抓取*
 
@@ -100,7 +102,7 @@ pull时要写完整名字
 
 ## 删除容器文件
 
-`docker ccontainer rm [containerID]`
+`docker container rm [containerID]`
 
 
 
