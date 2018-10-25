@@ -69,3 +69,19 @@
    3. ...
 
    安装过程请参考https://blog.csdn.net/just_shunjian/article/details/78686776
+
+## Nginx 编译安装
+
+```bash
+./configure
+```
+
+在配置时可能会出现相关报错（PCRE, openSSL）,需要安装以下程序(ubuntu)：
+
+```bash
+sudo apt-get install libpcre3 libpcre3-dev
+sudo apt-get install openssl libssl-dev
+sudo apt-get install zlib1g-dev 
+
+```
+
