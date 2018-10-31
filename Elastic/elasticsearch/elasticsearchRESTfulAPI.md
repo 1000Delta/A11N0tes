@@ -110,6 +110,108 @@ GET /index/type/_search
 
 通过在匹配值中使用多个单词进行匹配，搜索结果将会根据**匹配单词结果顺序**进行**相关性判定**并**将相关性大于0的对象按照相关性得分降序排序**
 
+#### 高亮搜索片段
+
+```
+GET /index/type/_search
+{
+    "query": {
+        "match": {
+            "key": "w1, w2"
+        }
+    },
+    "highlight": {
+        "fields": {
+        	"key": {}            
+        }
+    }
+}
+```
+
+`highlight`字段中指定的key在搜索结果中将会被高亮
+
+### 分析文档
+
+对指定文档进行聚合分析，基于数据生成一些精细的分析结果。
+
+例：
+
+```
+GET /megacorp/employee/_search
+{
+  "aggs": {
+    "all_interests": {
+      "terms": { "field": "interests" }
+    }
+  }
+}
+```
+
+使用过程中可能会提示`Illegal_argument_exception`，对此有两种解决方案：
+
+1. 修改mapping
+
+   针对文本字段需要设置`fielddata`值为`true`，示例如下：
+
+   ```
+   PUT /megacorp/employee/_mapping/
+   {
+     "properties": {
+       "interests": {
+         "type": "text", 
+         "fielddata": true
+       }
+     }
+   }
+   ```
+
+2. 使用字段的`.keyword`子域
+
+   ```
+   GET /megacorp/employee/_search
+   {
+     "aggs": {
+       "all_interests": {
+         "terms": { "field": "interests.keyword" }
+       }
+     }
+   }
+   ```
+
+### 集群
+
+#### 集群健康
+
+```
+GET /_cluster/health
+```
+
+返回值中包括字段：
+
+- `status` 集群健康
+  - `green` 所有**主分片**和**副本分片**都正常运行
+  - `yellow` 所有**主分片**都正常运行，但不是所有的**副本分片**都正常运行
+  - `red` 有**主分片**没能正常运行	
+
+#### 添加索引
+
+```
+PUT /blogs
+{
+    "settings": {
+        "number_of_shards": 3,
+        "number_of_replicas": 1
+    }
+}
+```
+
+通过`PUT`方法，直接创建
+
+在`settings`字段中设置了索引的相关属性：
+
+- `number_of_shards` 使用的**主分片数**
+- `number_of_replicas` **每个**主分片的副本分片数
+
 
 
 ## JSON关键字
@@ -120,5 +222,9 @@ GET /index/type/_search
   - `match` 匹配器
   - `filter` 过滤器
     - `gt` 表示 *大于（great than）*
-    - 
+- `highlight` 高亮
+  - `field`
+- `aggs` 聚合
+  - `terms`
+  - `avg`
 
