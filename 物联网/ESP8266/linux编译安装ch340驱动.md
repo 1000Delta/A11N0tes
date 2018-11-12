@@ -30,10 +30,17 @@
           timer_pending
    ```
 
-   第二个问题，由于linux好版本内核已经将`signal_pending()`移动到了`/include/linux/sched/signal.h`中，所以需要引入此文件：
+   - `wait_queue_t`的问题，可以直接将这一句定义注释掉，因为`wait`变量没有使用。。。
+
+   - `signal_pending`的问题，由于linux好版本内核已经将`signal_pending()`移动到了`/include/linux/sched/signal.h`中，所以需要引入此文件：
 
    ```c
    #include <linux/sched/signal.h>
    ```
 
+4. 把驱动设为自启动，把驱动放入原路径：
+
+   ```bash
+   sudo cp ch34x.ko /lib/modules/$(uname -r)/kernel/drivers/usb/serial/
+   ```
 
