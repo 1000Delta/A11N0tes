@@ -26,6 +26,19 @@ docker run ubuntu
 
 ## pull
 
+```bash
+docker [image] pull <NAME>[:TAG]
+```
+
+下载指定镜像
+
+###　参数
+
+- `NAME` 指定镜像的名称
+- `TAG` 镜像的标签（通常表示版本信息）
+
+
+
 ## commit
 
 ## push
