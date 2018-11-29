@@ -1,6 +1,6 @@
 # Elasticsearch术语
 
-### 索引
+## 索引
 
 > 索引（名词）：
 >
@@ -66,3 +66,38 @@ optimizing 适合使用在日志等不会被经常更新的用例中：
 POST /logstash-2014-10/_optimize?max_num_segments=1
 ```
 
+
+
+## 文档
+
+对任何 Elasticsearch 文档而言，一个文档会包括一个或多个字段，任何字段都要有自己的数据类型，例如`string`、`integer`、`date`等。Elasticsearch 中是通过映射来进行字段和数据类型对应的。
+
+
+
+## 映射
+
+映射是定义一个文档和它包含的字段，存储和索引的过程，它定义了：
+
+- 哪些`string`字段应该被作为全文索引字段；
+- 哪些字段包含数字，日期和地理信息；
+- 日期值的格式；
+- 自定义规则控制**动态增加字段**的映射
+
+### 映射数据类型（Mapping dataTypes）
+
+每个索引都有一个索引类型用来规定文档要怎样被索引
+
+一个映射类型有：
+
+- 元字段（Meta-fields）
+  - 用于自定义如何处理关联文档的元数据。例如Meta-fields包括文档的`_index`，`_type`，`_id` 和 `_source`字段
+- 字段或属性
+  - 一个映射类型包括一个与文档相关的字段或属性的列表
+
+### 字段数据类型（Field datatypes）
+
+任何字段类型都有一个数据`type`，它可以是：
+
+- 一个简单的类型像`text`，`keyword`，`date`，`long`，`double`，`boolean`或者`ip`
+- 一个支持层级性的结构像`object`或`nested`
+- 或是一个专业结构像`geo_point`，`geo_shape`或`completion`
