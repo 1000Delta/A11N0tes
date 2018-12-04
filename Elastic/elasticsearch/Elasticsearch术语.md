@@ -101,3 +101,4 @@ POST /logstash-2014-10/_optimize?max_num_segments=1
 - 一个简单的类型像`text`，`keyword`，`date`，`long`，`double`，`boolean`或者`ip`
 - 一个支持层级性的结构像`object`或`nested`
 - 或是一个专业结构像`geo_point`，`geo_shape`或`completion`
+
