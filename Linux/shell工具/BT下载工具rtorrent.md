@@ -17,3 +17,6 @@ sudo apt-get install rtorrent
 2. 按下键移动左侧`*`光标到指定文件
 3. 使用【Ctrl + s】开始下载
 4. 使用【Ctrl + d】暂停，再次使用则删除
+
+## 退出
+
