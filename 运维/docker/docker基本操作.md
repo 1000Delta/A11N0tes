@@ -4,7 +4,10 @@
 
 
 
-## 搜索可用的docker镜像
+
+## 镜像操作
+
+### 搜索可用的docker镜像
 
 格式：`docker search 镜像名`
 
@@ -12,9 +15,16 @@
 docker search hello-world
 ```
 
+选项：
+
+- `-f --filter filter` 过滤输出内容
+- `--format string` 格式化输出内容
+- `--limit int` 限制输出结果，默认为25个
+- `--notrunc` 不截断输出结果  
 
 
-## 下载镜像
+
+### 下载镜像
 
 `docker pull 镜像名`
 
@@ -22,7 +32,38 @@ pull时要写完整名字
 
 
 
-## 在容器中安装新的程序
+### 列出所有安装过的镜像
+
+`docker images`
+
+`docker image ls`
+
+
+
+### 删除镜像
+
+`docker rmi IMAGE[ IMAGE...]`
+
+`docker image rm IMAGE[ IMAGE...] `
+
+其中
+
+选项：
+
+- `-f -force` 强制删除镜像，即使有容器依赖它
+
+- `-no-prune` 不要清理未带标签的父镜像
+
+
+### 发布镜像到官方网站
+
+`docker push 用户名/镜像名`
+
+你只能将镜像发布到自己的空间下面
+
+
+
+### 在容器中安装新的程序
 
 `docker run 用户名/镜像名 apt-get -y 程序名`
 
@@ -30,7 +71,7 @@ pull时要写完整名字
 
 
 
-## 保存对容器的修改
+### 保存对容器的修改
 
 `docker commit <id> 用户名/镜像名`
 
@@ -42,7 +83,7 @@ pull时要写完整名字
 
 
 
-## 生成容器
+### 生成容器
 
 `docker run [options] 用户名/镜像名 [命令 [命令参数]] `
 
@@ -56,13 +97,13 @@ pull时要写完整名字
 
 
 
-## 启动容器
+### 启动容器
 
 `docker container start [containerID]`
 
 
 
-## 检查运行中的容器
+### 检查运行中的容器
 
 `docker ps` 
 
@@ -84,7 +125,7 @@ pull时要写完整名字
 
 
 
-## 终止运行中的容器
+### 终止运行中的容器
 
 `docker container kill [containerID]`
 
@@ -100,22 +141,9 @@ pull时要写完整名字
 
 
 
-## 删除容器文件
+### 删除容器文件
 
 `docker container rm [containerID]`
 
 
 
-## 列出所有安装过的镜像
-
-`docker images`
-
-`docker image ls`
-
-
-
-## 发布镜像到官方网站
-
-`docker push 用户名/镜像名`
-
-你只能将镜像发布到自己的空间下面
