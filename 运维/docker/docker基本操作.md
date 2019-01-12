@@ -46,13 +46,13 @@ pull时要写完整名字
 
 `docker image rm IMAGE[ IMAGE...] `
 
-其中
+其中`IMAGE`可以为标签或ID
 
 选项：
 
 - `-f -force` 强制删除镜像，即使有容器依赖它
-
 - `-no-prune` 不要清理未带标签的父镜像
+
 
 
 ### 发布镜像到官方网站
