@@ -270,7 +270,7 @@ PUT /indexName
 #### 删除索引
 
 ```
-DELETE /index
+DELETE /indexName
 ```
 
 使用`DELETE`协议
@@ -307,6 +307,7 @@ POST /indexName
   - `match` 匹配器
   - `filter` 过滤器
     - `gt` 表示 *大于（great than）*
+    - `lt` *小于（less than）*
 - `highlight` 高亮
   - `field`
 - `aggs` 聚合

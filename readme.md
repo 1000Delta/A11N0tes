@@ -36,3 +36,14 @@
 1. 常微分方程
    1. [龙格库塔法](./Algorithm/龙格库塔法.md)
 
+**搜索引擎**
+
+  1. ElasticSearch
+
+      	1. [Elasticsearch配置](/home/delta/Documents/A11N0tes/Elastic/Elasticsearch/Elasticsearch配置.md)
+      	2. [Elasticsearch启动](./Elastic/Elasticsearch/Elasticsearch启动.md)
+      	3. [Elasticsearch报错修复](./Elastic/Elasticsearch/Elasticsearch报错修复.md)
+      	4. [Elasticsearch安装插件](/home/delta/Documents/A11N0tes/Elastic/Elasticsearch/Elasticsearch安装插件.md)
+
+     - [**Elasticsearch术语**](/home/delta/Documents/A11N0tes/Elastic/Elasticsearch/Elasticsearch术语.md)
+     - [**RESTfulAPI**](./Elastic/Elasticsearch/ElasticsearchRESTfulAPI.md)
