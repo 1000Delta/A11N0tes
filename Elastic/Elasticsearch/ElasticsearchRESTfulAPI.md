@@ -2,7 +2,7 @@
 
 > 所有语言都可以使用RESTful API 通过 port 9200 与 Elasticsearch 进行通信。
 
-## 格式
+## 基本格式
 
 curl:5
 
@@ -20,6 +20,46 @@ curl -X<VERB> '<PROTOCAL>://<HOST>:<PORT>/<PATH>?<QUERY_STRING>' -d '<BODY>'
 | `BODY`         | 一个 JSON 格式的请求体 (如果请求需要的话)                    |
 
 ## 实例
+
+### 通用语法
+
+#### 日期筛选
+
+语法：
+
+```
+<static_name{data_math_expr{data_format|time_zone}}>
+```
+
+解释：
+
+- `static_name` 索引的名称
+
+- `date_math_expr` 动态日期计算表达式
+
+- `date_format` 日期格式
+
+  格式：
+
+  - `d` 指定日期
+  - `M` 指定月份的第一天
+  - `Y` 指定年份的第一天
+  - `YYYY.MM` 指定年月，例：`2019.01`
+  - ``YYYY.MM.dd` 指定年月日，例：`2019.01.01`
+
+  变化日期：
+
+  - `d-{n}d` 指定日期减去n天，例：`d-2d`
+  - `M-{n}M` 指定月份减去n月
+  - ... 同理
+
+- `time_zone` 时区，默认为UTC
+
+  时区格式：`+8:00`（北京时间）
+
+#### 通用参数
+
+- `pretty
 
 ### 文档
 
