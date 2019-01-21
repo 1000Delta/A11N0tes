@@ -124,7 +124,7 @@ PUT /index/type/id
 
 `index` 索引库名称
 
-`employee` 类型名称
+`type` 类型名称
 
 `id` 主键（id）
 
