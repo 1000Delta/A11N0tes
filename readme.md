@@ -62,4 +62,4 @@
 **开发工具**
 
 1. JetBrains
-   1. [自动添加Getter/Setter](./文档/notes/开发工具/JetBrains自动添加getter&setter.md)
+   1. [自动添加Getter/Setter等](./文档/notes/开发工具/JetBrains自动添加getter&setter.md)
