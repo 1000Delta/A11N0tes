@@ -113,6 +113,8 @@ GET /megacorp/employee/_search
 
 #### 添加文档
 
+##### 存储文档到指定空间（id）
+
 ```
 PUT /index/type/id
 {
@@ -129,6 +131,17 @@ PUT /index/type/id
 `id` 主键（id）
 
 其后跟随的是数据的JSON键值对
+
+##### 存储文档到指定索引&类型下
+
+```
+POST /index/type
+{
+    "key": "value"
+}
+```
+
+数据释义同上。
 
 #### 计算文档的数量
 

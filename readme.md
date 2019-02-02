@@ -38,11 +38,11 @@
 **算法**
 
 1. 数据结构
-   1. [链表反转](/home/delta/Documents/A11N0tes/Algorithm/链表反转.md)
+   1. [链表反转](./Algorithm/链表反转.md)
 2. 简单算法
-   1. [递归](/home/delta/Documents/A11N0tes/Algorithm/递归.md)
-   2. [最大公因数](/home/delta/Documents/A11N0tes/Algorithm/最大公因数.md)
-   3. [最小公倍数](/home/delta/Documents/A11N0tes/Algorithm/最小公倍数.md)
+   1. [递归](./Algorithm/递归.md)
+   2. [最大公因数](./Algorithm/最大公因数.md)
+   3. [最小公倍数](./Algorithm/最小公倍数.md)
 3. 常微分方程
    1. [龙格库塔法](./Algorithm/龙格库塔法.md)
 4. 进化算法
@@ -52,14 +52,14 @@
 
 1. ElasticSearch
 
-    1. [Elasticsearch配置](/home/delta/Documents/A11N0tes/Elastic/Elasticsearch/Elasticsearch配置.md)
+    1. [Elasticsearch配置](./Elastic/Elasticsearch/Elasticsearch配置.md)
     2. [Elasticsearch启动](./Elastic/Elasticsearch/Elasticsearch启动.md)
     3. [Elasticsearch报错修复](./Elastic/Elasticsearch/Elasticsearch报错修复.md)
-    4. [Elasticsearch安装插件](/home/delta/Documents/A11N0tes/Elastic/Elasticsearch/Elasticsearch安装插件.md)
-    5. [**Elasticsearch术语**](/home/delta/Documents/A11N0tes/Elastic/Elasticsearch/Elasticsearch术语.md)
+    4. [Elasticsearch安装插件](./Elastic/Elasticsearch/Elasticsearch安装插件.md)
+    5. [**Elasticsearch术语**](./Elastic/Elasticsearch/Elasticsearch术语.md)
     6. [**RESTfulAPI**](./Elastic/Elasticsearch/ElasticsearchRESTfulAPI.md)
 
 **开发工具**
 
 1. JetBrains
-   1. [自动添加Getter/Setter等](./文档/notes/开发工具/JetBrains自动添加getter&setter.md)
+   1. [自动添加Getter/Setter等](./开发工具/JetBrains自动添加getter&setter.md)
