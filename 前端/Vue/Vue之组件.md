@@ -22,8 +22,6 @@ new Vue({
 
 Vue的`data`属性必须是一个函数，返回其所需的参数的json对象，否则组件将共享同一组数据
 
-
-
 ## Prop
 
 `props`中存放自定义属性的名称
@@ -40,7 +38,7 @@ Vue的`data`属性必须是一个函数，返回其所需的参数的json对象�
 
 通过事件可以将值抛出到组件之外被父级元素接收到：
 
-```vue
+```html
 <template>
 	<div v-on:click="$emit('new-action', 1)">
     </div>
