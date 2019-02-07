@@ -60,3 +60,37 @@
   ```
 
 经测试，对于构造方法只能使用第二种方法实现重载。
+
+## `call_user_func` 和 `call_user_func_array`
+
+这两个函数非常像，都是通过函数名调用一个函数，其中，对于OOP的调用，对于类方法和对象方法需要使用不同的方式。
+
+两个函数的不同点在于，`call_user_func`调用函数传递的参数是不定参数，具体来说是`call_user_func($name, $arg1, $arg2, $arg3, ...)`，而`call_user_func_array`只有两个参数，传递的两个参数是函数名和由传递参数构成的数组。
+
+
+
+```php
+<?php
+class A {
+    
+    static function f1($a, $b) {}
+    
+    function f2() {
+        
+        // do something
+    }
+}
+function f3() {
+    
+    // do something
+}
+// 两种方式调用类方法
+call_user_func(array('A', 'f1'), $arg1, $arg2);
+call_user_func('A::f1', $arg1, $arg2);
+// 调用对象方法
+$obj = new A();
+call_user_func(array($obj, 'f3'));
+// 调用全局函数
+call_user_func('f3');
+```
+

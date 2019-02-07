@@ -367,3 +367,11 @@ POST /indexName
   - `terms`
   - `avg`
 
+
+
+## 请求结果 (result)
+
+- created - 存储数据成功
+- updated - 更新数据成功
+- deleted - 删除数据成功
+- not_found - 未找到数据
