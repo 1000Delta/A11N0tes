@@ -61,6 +61,128 @@ curl -X<VERB> '<PROTOCAL>://<HOST>:<PORT>/<PATH>?<QUERY_STRING>' -d '<BODY>'
 
 - `pretty
 
+### 索引
+
+#### 创建索引
+
+```
+PUT /{indexName}
+{
+    "settings": {
+        "index": {
+            "number_of_shards": 3,
+        	"number_of_replicas": 1
+        }
+    }
+}
+```
+
+通过`PUT`方法，直接创建
+
+在根目录下制定路径名即为索引名：`/{{indexName}}`
+
+在`settings`字段中设置了索引的相关属性：
+
+- `number_of_shards` 使用的**主分片数**，默认为5
+- `number_of_replicas` **每个**主分片的**副本分片**数，默认为1
+
+#### 修改副本数量
+
+通过 update-index-setting API 修改
+
+```
+PUT /{indexName}/_settings/
+{
+    "number_of_raplicas"": 1
+}
+```
+
+将副本的数量修改为`1`
+
+#### 创建自定义字段
+
+```
+PUT /{indexName}
+{
+    "settings": {
+        "number_of_shards": 3,
+        "number_of_replicas": 2
+    },
+    "mapping": {
+        "secilog": {
+            "properties": { 
+                "logType": {
+                    "type":"string"	,
+                    "index": "not_analyzed" # 不进行分析
+                }
+            }
+        }
+    }
+}
+```
+
+在样例中，我们创建了一个名为`secilog`的类型，类型中有一个字段，字段的名称是`logType`，字段的数据类型是`string`，而且字段类型是**不进行分析**的。
+
+#### 删除索引
+
+```
+DELETE /{indexName}
+```
+
+使用`DELETE`协议
+
+删除索引需要指定索引名称，别名或者通配符。
+
+删除索引可以使用逗号分隔符，或者使用`_all`或`*`号来删除全部索引。
+
+为了防止误删除，可以设置`elasticsearch.yml`中属性`action.destructive_requires_name`为`true`，禁止使用通配符或者`_all`，必须使用名称或别名。
+
+#### 获取索引
+
+```
+GET /{indexName}
+```
+
+显示系统中的全部信息，包括一些默认配置
+
+#### 打开/关闭索引
+
+```
+POST /{indexName}
+```
+
+#### 映射管理
+
+为索引添加数据类型，为数据类型添加字段等。
+
+##### 创建索引同时添加数据类型
+
+```json
+PUT /{indexName}
+{
+    "mapping": {
+        "{dataType}": {
+            "properties" {
+            	"{field}": {"type":"{fieldType}"}
+        	}
+        }
+    }
+}
+```
+
+##### 为索引添加数据类型
+
+```json
+PUT /{index}/_mapping/{dataType}
+{
+    "properties" {
+    	"{field}": {"type":"{fieldType}"}
+	}
+}
+```
+
+
+
 ### 文档
 
 #### 分析文档
@@ -255,102 +377,6 @@ optimizing 适合使用在日志等不会被经常更新的用例中：
 ```
 POST /logstash-2014-10/_optimize?max_num_segments=1
 ```
-
-
-
-### 索引
-
-#### 创建索引
-
-```
-PUT /indexName
-{
-    "settings": {
-        "index": {
-            "number_of_shards": 3,
-        	"number_of_replicas": 1
-        }
-    }
-}
-```
-
-通过`PUT`方法，直接创建
-
-在根目录下制定路径名即为索引名：`/{indexName}`
-
-在`settings`字段中设置了索引的相关属性：
-
-- `number_of_shards` 使用的**主分片数**，默认为5
-- `number_of_replicas` **每个**主分片的**副本分片**数，默认为1
-
-#### 修改副本数量
-
-通过 update-index-setting API 修改
-
-```
-PUT /indexName/_settings/
-{
-    "number_of_raplicas"": 1
-}
-```
-
-将副本的数量修改为`1`
-
-#### 创建自定义字段
-
-```
-PUT /indexName
-{
-    "settings": {
-        "number_of_shards": 3,
-        "number_of_replicas": 2
-    },
-    "mapping": {
-        "secilog": {
-            "properties": { 
-                "logType": {
-                    "type":"string"	,
-                    "index": "not_analyzed" # 不进行分析
-                }
-            }
-        }
-    }
-}
-```
-
-在样例中，我们创建了一个名为`secilog`的类型，类型中有一个字段，字段的名称是`logType`，字段的数据类型是`string`，而且字段类型是**不进行分析**的。
-
-#### 删除索引
-
-```
-DELETE /indexName
-```
-
-使用`DELETE`协议
-
-删除索引需要指定索引名称，别名或者通配符。
-
-删除索引可以使用逗号分隔符，或者使用`_all`或`*`号来删除全部索引。
-
-为了防止误删除，可以设置`elasticsearch.yml`中属性`action.destructive_requires_name`为`true`，禁止使用通配符或者`_all`，必须使用名称或别名。
-
-#### 获取索引
-
-```
-GET /indexName
-```
-
-显示系统中的全部信息，包括一些默认配置
-
-#### 打开/关闭索引
-
-```
-POST /indexName
-```
-
-#### 映射管理
-
-
 
 ## JSON关键字
 
