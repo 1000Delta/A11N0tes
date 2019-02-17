@@ -2,6 +2,8 @@
 
 ## 本地测试环境
 
+### Elasticsearch
+
 部署主节点：
 
 ```powershell
@@ -21,7 +23,9 @@ network.host: 0.0.0.0
 部署数据节点：
 
 ```powershell
-docker run -it -d -v D:\tmp\ES\node2\elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v D:\tmp\ES\node2\data:/usr/share/elasticsearch/data -p 9301:9300 --name esNode2 elasticsearch:6.4.2
+docker run -it -d -v D:\tmp\ES\node2\elasticsearch.yml:/usr/share/elasticsearch/config/ela
+sticsearch.yml -v D:\tmp\ES\node2\data:/usr/share/elasticsearch/data --network container:esNode1 --name esNod
+e2 elasticsearch:6.4.2
 ```
 
 数据节点配置文件：
@@ -34,7 +38,9 @@ node.data: true
 network.host: 0.0.0.0
 ```
 
-启动Kibana
+### Kibana
+
+启动Kibana：
 
 ```powershell
 docker run -it -d -p 5601:5601 --name kibana kibana:6.6.0
