@@ -336,18 +336,86 @@ GET /index/type/_search
 {
     "query": {
         "match": {
-            "key": "w1, w2"
+            "{key}": "{w1, w2}"
         }
     },
     "highlight": {
         "fields": {
-        	"key": {}            
+        	"{key}": {}            
         }
     }
 }
 ```
 
 `highlight`字段中指定的key在搜索结果中将会被高亮
+
+#### -----------------------
+
+####  精确值搜索
+
+使用`term`关键字
+
+```json
+{
+    "term": {
+        "column": "value"
+    }
+}
+```
+
+`term`查询会查询我们指定的精确值。
+
+查找精确值且不需要进行评分计算时，可以使用`sonstant_score`查询来以非评分模式进行。
+
+```
+{
+    "query" : {
+        "constant_score" : {
+            "filter" : {
+                "term" : {
+                    "{price}" : 20
+                }
+            }
+        }
+    }
+}
+```
+
+使用`filter`关键字可以不进行评分或相关度的计算，所有的结果都会返回一个默认评分1
+
+##### 不分析精确值
+
+ES会对数据项进行分析，划分成多个更小的token；对于包含复杂字符的精确值（比如`#`, `-`等），需要在索引映射中定义数据项为`not_analyzed`：
+
+```json
+{
+    "mappings" : {
+        "{products}" : {
+            "properties" : {
+                "{productID}" : {
+                    "type" : "string",
+                    "index" : "not_analyzed" 
+                }
+            }
+        }
+    }
+
+}
+```
+
+##### 多个精确值
+
+使用`terms`关键字，并且将字段的值改为数组。
+
+#### 布尔过滤器
+
+在过滤器`filter`中使用 `bool` 关键字，然后使用子过滤器：
+
+- `must`
+- `should`
+- `must_not`
+
+其中接受一个查询数组作为输入
 
 ### 集群
 
