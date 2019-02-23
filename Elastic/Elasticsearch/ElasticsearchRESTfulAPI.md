@@ -316,6 +316,8 @@ GET /index/type/_search
 
 #### 全文搜索
 
+使用`match`关键字
+
 ```
 GET /index/type/_search
 {
