@@ -331,6 +331,68 @@ GET /index/type/_search
 
 通过在匹配值中使用多个单词进行匹配，搜索结果将会根据**匹配单词结果顺序**进行**相关性判定**并**将相关性大于0的对象按照相关性得分降序排序**
 
+##### 提高精度
+
+使用`operator`关键字可以修改默认匹配模式，比如说必须包含所有词项：
+
+```json
+{
+    "query": {
+        "match": {
+            "title": {      
+                "query":    "BROWN DOG!",
+                "operator": "and"
+            }
+        }
+    }
+}
+```
+
+##### 控制精度
+
+使用`minimum_should_match`最小匹配参数
+
+##### 提升查询权重
+
+使用`bool`过滤器查询时使用`should`域加入要提高权重的关键字匹配
+
+如果需要设定关键字的不同权重，需要使用`boost`参数：
+
+```json
+{
+    {
+    "query": {
+        "bool": {
+            "must": {
+                "match": {  
+                    "content": { //boost为默认值1
+                        "query":    "full text search",
+                        "operator": "and"
+                    }
+                }
+            },
+            "should": [
+                { "match": {
+                    "content": {
+                        "query": "Elasticsearch",
+                        "boost": 3 
+                    }
+                }},
+                { "match": {
+                    "content": {
+                        "query": "Lucene",
+                        "boost": 2 
+                    }
+                }}
+            ]
+        }
+    }
+}
+}
+```
+
+`boost` 参数的值越高，代表相应关键字的权重越高，不设定此参数时为默认值1。
+
 #### 高亮搜索片段
 
 ```
