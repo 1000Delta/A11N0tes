@@ -1,4 +1,4 @@
-# esp8266连接wifi
+# NodeMCU连接wifi
 
 ```lua
 --init.lua
