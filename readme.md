@@ -9,12 +9,8 @@
 ## 待完成笔记
 
 - [粒子群算法](./Algorithm/进化算法/粒子群算法.md)
-<<<<<<< HEAD
 - golang语法 -- 并发
-=======
 - 自控原理笔记/复习
->>>>>>> ce2cea398a7baca995c1f01f5c3f15658bc6d837
-
 
 ## 目录
 
@@ -80,14 +76,13 @@
 1. JetBrains
    1. [自动添加Getter/Setter等](./开发工具/JetBrains自动添加getter&setter.md)
 
-<<<<<<< HEAD
 **后端技术**
 
 - 数据库
   1. redis
      1. [基本命令](./Redis/基本命令.md)
      2. [数据类型](./A11N0tes/Redis/数据类型.md)
-=======
+
 **控制理论**（自动控制原理）
 
 1. [绪论](./自动控制原理/1_绪论.md)
@@ -97,5 +92,3 @@
 
 1. nodeMcu
    1. [api文档](./物联网/NodeMCU/api.md)
-
->>>>>>> ce2cea398a7baca995c1f01f5c3f15658bc6d837
