@@ -27,6 +27,8 @@
 4. Go
    1. golang语法
       1. [golang语法](./golang/golang语法/golang语法.md)
+5. Lua
+   1. [基本概念](./Lua/基本概念.md)
 
 **Linux**
 
@@ -80,3 +82,7 @@
 1. nodeMcu
    1. [api文档](./物联网/NodeMCU/api.md)
 
+**电子技术**
+
+1. 数字电子技术
+   1. [555定时器](./电子/数电/555.md)
