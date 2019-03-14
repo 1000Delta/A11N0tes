@@ -93,13 +93,9 @@
 **IOT**
 
 1. nodeMcu
-<<<<<<< HEAD
    1. [api文档](./物联网/NodeMCU/api.md)
 
 **电子技术**
 
 1. 数字电子技术
    1. [555定时器](./电子/数电/555.md)
-=======
-   1. [api文档](./物联网/NodeMCU/api.md)
->>>>>>> f034e504a4d85800ba62d69bda30dc8c10bc4acd
