@@ -30,6 +30,14 @@
    sysctl -p
    ```
 
+   也可以直接执行
+
+   ```shell
+   sysctl -w vm.max_map_count=262144
+   ```
+
+   
+
 
 ## can not run elasticsearch as root
 
