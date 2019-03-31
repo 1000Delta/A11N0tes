@@ -17,3 +17,6 @@ git clone https://github.com/golang/tools.git tools
 ```
 
 然后在vscode终端中下载
+
+https://www.jianshu.com/p/6293503522bc
+
