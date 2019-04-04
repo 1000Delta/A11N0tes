@@ -20,7 +20,7 @@
 
    max_map_count限制了一个进程可以拥有的VMA的数量，系统默认是65530，修改成262144。修改`/etc/sysctl.conf`：
 
-   ```
+   ```properties
    vm.max_map_count=262144
    ```
 

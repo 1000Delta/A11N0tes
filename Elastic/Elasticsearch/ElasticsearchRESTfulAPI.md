@@ -148,7 +148,8 @@ GET /{indexName}
 #### 打开/关闭索引
 
 ```
-POST /{indexName}
+POST /{indexName}/close
+POST /{indexName}/open
 ```
 
 #### 映射管理

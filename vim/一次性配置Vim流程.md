@@ -4,16 +4,18 @@
 
    ```properties
    set nocompatible " be iMproved, required
-   filetype off " required
+   "filetype off " required
    syntax on " 语法高亮 
    set ruler " 状态栏标尺
    set incsearch " 搜索时显示结果
+   set ignorecase " 搜索时忽略大小写
    
    " 配色方案
    set background=dark 
    colorscheme solarized
    "colorscheme molokai 
    "colorscheme phd 
+   let g:Powerline_colorscheme='solarized256' " 设置状态栏主题风格
    
    " 界面美化
    set laststatus=2 " 总是显示状态栏
@@ -26,11 +28,20 @@
    set termencoding=utf-8
    set formatoptions+=mM
    set fencs=utf-8,gbk
+   set smartindent
    
    " 缩进设置
    set tabstop=4
    set shiftwidth=4
    set softtabstop=4
+   
+   " 折行设置
+   set linebreak " 特殊符号才会折行
+   
+   set autochdir " 自动切换工作目录
+   
+   " Go语言工具配置
+   filetype plugin on " gocode
    
    " set the runtime path to include Vundle and initialize
    set rtp+=~/.vim/bundle/Vundle.vim
@@ -43,6 +54,9 @@
    " Keep Plugin commands between vundle#begin/end.
    " plugin on GitHub repo
    Plugin 'tpope/vim-fugitive'
+   Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+   Plugin 'fatih/vim-go'
+   Plugin 'nsf/gocode', {'rtp': 'vim/'}
    " plugin from http://vim-scripts.org/vim/scripts.html
    " Plugin 'L9'
    " Git plugin not hosted on GitHub
@@ -105,6 +119,15 @@
    let g:ycm_collect_identifiers_from_comments_and_strings = 0
    
    nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处 
+   " 函数参数补全配置
+   set rtp+=~/.vim/bundle/CompleteParameter.vim
+   " Minimal setting
+   inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+   smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+   imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+   smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+   imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+   
    ```
 
 2. 下载所需插件/主题
@@ -115,3 +138,4 @@
    4. [安装powwerline]()
 
 3. 强化自动补全 - [参数补全CompleteParameter](插件/安装CompleteParameter.md)
+

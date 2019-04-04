@@ -7,7 +7,7 @@ CREATE USER 'username'@'host' IDENTIFIED BY 'password';
 ```
 
 - `username` 你将创建的用户名
-- `host` 指定登录主机，`’localhost'`指只能在本地登录，若为`’%‘`表示在任何电脑上都能登录；也可以制定某台机器可以远程登录
+- `host` 指定登录主机，`'localhost'`指只能在本地登录，若为`%`表示在任何电脑上都能登录；也可以制定某台机器可以远程登录
 - `password` 该用户的登录密码，密码可以为空
 
 
