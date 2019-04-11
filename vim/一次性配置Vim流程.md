@@ -1,8 +1,44 @@
 # 一次性配置Vim流程
 
-1. 修改配置文件
+1. 修改配置文件`~/.vimrc`或者`/etc/.vimrc`
 
-   ```properties
+   无插件版本
+
+   ```shell
+   set nocompatible " be iMproved, required
+   "filetype off " required
+   syntax on " 语法高亮 
+   set ruler " 状态栏标尺
+   set incsearch " 搜索时显示结果
+   set ignorecase " 搜索时忽略大小写
+   
+   " 界面美化
+   set laststatus=2 " 总是显示状态栏
+   set ruler " 行号显示
+   set number " 高亮当前行	
+   set hlsearch " 高亮搜索内容
+   
+   " 编码设置
+   set encoding=utf-8
+   set termencoding=utf-8
+   set formatoptions+=mM
+   set fencs=utf-8,gbk
+   set smartindent
+   
+   " 缩进设置
+   set tabstop=4
+   set shiftwidth=4
+   set softtabstop=4
+   
+   " 折行设置
+   set linebreak " 特殊符号才会折行
+   
+   set autochdir " 自动切换工作目录
+   ```
+
+   
+
+   ```shell
    set nocompatible " be iMproved, required
    "filetype off " required
    syntax on " 语法高亮 
