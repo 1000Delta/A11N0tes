@@ -543,6 +543,56 @@ optimizing 适合使用在日志等不会被经常更新的用例中：
 POST /logstash-2014-10/_optimize?max_num_segments=1
 ```
 
+## Suggests API | 建议
+
+格式：
+
+```json
+POST a_index/_search
+{
+    "suggest": {
+        "my-suggestion": {
+            "text": "trying out ES",
+            "term": {
+                "field": "message"
+            }
+        }
+    }
+}
+```
+
+其中`my-seggestion`代表一个建议，可以同时获取多个建议
+
+查询结果：
+
+> ```
+> {
+>   "_shards": ...
+>   "hits": ...
+>   "took": 2,
+>   "timed_out": false,
+>   "suggest": {
+>     "my-suggest-1": [ {
+>       "text": "tring",
+>       "offset": 0,
+>       "length": 5,
+>       "options": [ {"text": "trying", "score": 0.8, "freq": 1 } ]
+>     }, {
+>       "text": "out",
+>       "offset": 6,
+>       "length": 3,
+>       "options": []
+>     }, {
+>       "text": "elasticsearch",
+>       "offset": 10,
+>       "length": 13,
+>       "options": []
+>     } ],
+>     "my-suggest-2": ...
+>   }
+> }
+> ```
+
 ## JSON关键字
 
 - `query` 查询主结构
