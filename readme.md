@@ -10,6 +10,10 @@
 - 有限状态机
 - 非阻塞多路复用模型
 - 背包问题
+- [Web技术 —— comet](https://zh.wikipedia.org/wiki/Comet_(web%E6%8A%80%E6%9C%AF))
+  - 长轮询
+  - iframe流
+  - H5新技术 —— websocket
 
 ## 待完成笔记
 
