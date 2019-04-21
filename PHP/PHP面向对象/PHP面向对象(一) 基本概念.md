@@ -171,3 +171,4 @@ $second->setCouple($first);
 People::getType();  //调用类方法输出类变量
 //最后将会输出 路人甲 dead 路人乙 dead
 ```
+
