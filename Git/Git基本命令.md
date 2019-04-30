@@ -2,7 +2,7 @@
 
 `git init`初始化版本库
 
-`git clone [url] [dir_name] ` 克隆远程版本库
+`git clone [option] URL [dir_name] ` 克隆远程版本库
 
 - `[dir_name]` 设置新建目录的名字
 - 参数

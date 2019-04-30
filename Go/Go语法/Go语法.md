@@ -1,8 +1,42 @@
 # golang语法
 
-## 遍历 for range
+## 控制语句
+
+### 遍历 for range
 
 使用`for range`
+
+### switch
+
+一般用法
+
+```go
+switch ch {
+case 0:
+    // do
+case 1:
+    // do
+default:
+    // do
+}
+```
+
+多分支表达式
+
+```go
+switch {
+case ch > 0:
+    // do
+case ch == 0:
+    // do
+case ch < 0:
+	// do    
+default:
+    // do
+}
+```
+
+
 
 ## 延迟执行语句 defer
 
