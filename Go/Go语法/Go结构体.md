@@ -19,3 +19,4 @@ type MainController struct {
 ```
 
 如上，在结构体内添加指定结构体即完成结构体的嵌入。
+
