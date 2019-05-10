@@ -12,3 +12,8 @@
 
 - 如果你的 BeforeRouter 过滤器用到了 session 就会报错，你应该把它加入到 AfterStatic 过滤器中。
 
+## 参数配置
+
+- 使用`beego.AppConfig.string(key string)`来获取已配置的参数
+- 使用`[]`在配置文件中划分出不同模式（`runmode`），使用`mode::key`来指定不同模式的参数
+- 从环境变量中获取配置项：`${env||value}` 如果环境变量存在则使用环境变量，否则使用`value`
