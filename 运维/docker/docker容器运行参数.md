@@ -8,7 +8,7 @@
 
 `--name NAME` 容器名
 
-`--volume "$PWD":/var/www/html`  将当前目录（`$PWD`）映射到容器的`/var/www/html`（Apache 对外访问的默认目录）。因此，当前目录的任何修改，都会反映到容器里面，进而被外部访问到。
+`--volume "$PWD":/var/www/html`  将当前目录（`$PWD`）映射到容器的`/var/www/html`。因此，当前目录的任何修改，都会反映到容器里面，进而被外部访问到。也可使用`-v`
 
 `-d` 后台运行容器
 
