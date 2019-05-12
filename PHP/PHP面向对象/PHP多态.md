@@ -89,7 +89,7 @@ call_user_func(array('A', 'f1'), $arg1, $arg2);
 call_user_func('A::f1', $arg1, $arg2);
 // 调用对象方法
 $obj = new A();
-call_user_func(array($obj, 'f3'));
+call_user_func(array($obj, 'f3'));    
 // 调用全局函数
 call_user_func('f3');
 ```

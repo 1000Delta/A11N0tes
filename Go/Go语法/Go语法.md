@@ -36,7 +36,9 @@ default:
 }
 ```
 
+## 映射 map
 
+- golang中map是无序的集合。每次迭代的顺序可能不一样
 
 ## 延迟执行语句 defer
 
