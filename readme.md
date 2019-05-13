@@ -3,6 +3,7 @@
 ## 待复盘项目
 
 - [XTUSearch](项目记录/XTUSearch.md)
+- gosms
 
 ## 感兴趣的概念
 
@@ -17,7 +18,11 @@
 
 ## 待完成笔记
 
-- [粒子群算法](./Algorithm/进化算法/粒子群算法.md)
+- 算法
+  - [KMP](./Algorithm/KMP.md)
+  - [跳表](./Algorithm/跳表.md)
+  - [paxos](./Algorithm/分布式算法/paxos.md)
+  - [粒子群算法](./Algorithm/进化算法/粒子群算法.md)
 - golang语法 -- 并发
 - 自控原理笔记/复习 - [自动控制原理的数学模型](./自动控制原理/2_自动控制原理的数学模型)
 - 密码学
