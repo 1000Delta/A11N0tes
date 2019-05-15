@@ -2,7 +2,11 @@
 
 ## 路由
 
-- Restful函数式路由：使用`beego.Router()`函数将控制器直接传入，然后通过直接调用其绑定方法（`.Get(), .Post()`）等限制访问
+- **Restful函数式路由**：使用`beego.Router()`函数将控制器直接传入，然后通过直接调用其绑定方法（`.Get(), .Post()`）等限制访问
+  - 最简单的路由**传入闭包**即可，闭包参数类型`*context.Context`
+  - **传入控制器**需要传入其指针类型，例：`beego.Router("/", &controllers.MainController{})`
+    - 使用**自定义函数名**：在路由中指定第三个参数，string类型，格式为`"httpmethod[,httpmethod]:function[;httpmethod:function]"`，可以指定将不同的http方法调用同一个函数
+  - **正则路由**，框架实现了部分简化自动替换 https://beego.me/docs/mvc/controller/router.md#%E6%AD%A3%E5%88%99%E8%B7%AF%E7%94%B1
 
 ## 静态文件
 

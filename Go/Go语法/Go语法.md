@@ -1,5 +1,19 @@
 # golang语法
 
+## 变量
+
+### 创建变量
+
+```go
+var a int
+var b = 1
+func main() {
+    c := 1
+}
+```
+
+
+
 ## 控制语句
 
 ### 遍历 for range
