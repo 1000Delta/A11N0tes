@@ -21,3 +21,12 @@
 - 使用`beego.AppConfig.string(key string)`来获取已配置的参数
 - 使用`[]`在配置文件中划分出不同模式（`runmode`），使用`mode::key`来指定不同模式的参数
 - 从环境变量中获取配置项：`${env||value}` 如果环境变量存在则使用环境变量，否则使用`value`
+
+## 控制器
+
+- 实现控制器只需匿名引入`beego.Controller`
+- 信息验证：实现`Prepare`方法，并在其中加入验证
+  - **提前终止运行**：`StopRun`方法
+    - 如果调用了`StopRun`将不会调用`Finish`，如果有资源需要释放，在终止之前手动调用`Finish`
+- PUT 表单 [在表单中使用PUT方法](https://beego.me/docs/mvc/controller/controller.md#%E5%9C%A8%E8%A1%A8%E5%8D%95%E4%B8%AD%E4%BD%BF%E7%94%A8-put-%E6%96%B9%E6%B3%95)
+
