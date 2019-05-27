@@ -28,5 +28,9 @@
 - 信息验证：实现`Prepare`方法，并在其中加入验证
   - **提前终止运行**：`StopRun`方法
     - 如果调用了`StopRun`将不会调用`Finish`，如果有资源需要释放，在终止之前手动调用`Finish`
-- PUT 表单 [在表单中使用PUT方法](https://beego.me/docs/mvc/controller/controller.md#%E5%9C%A8%E8%A1%A8%E5%8D%95%E4%B8%AD%E4%BD%BF%E7%94%A8-put-%E6%96%B9%E6%B3%95)
+- PUT 接收表单 [在表单中使用PUT方法](https://beego.me/docs/mvc/controller/controller.md#%E5%9C%A8%E8%A1%A8%E5%8D%95%E4%B8%AD%E4%BD%BF%E7%94%A8-put-%E6%96%B9%E6%B3%95)
+- 直接输出文本在方法中使用`this.Ctx.WriteString`
 
+## 模板
+
+- 模板文件/文件夹名必须小写
