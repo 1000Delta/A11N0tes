@@ -565,31 +565,39 @@ POST a_index/_search
 
 查询结果：
 
-> ```
+> ```json
 > {
->   "_shards": ...
->   "hits": ...
->   "took": 2,
->   "timed_out": false,
->   "suggest": {
->     "my-suggest-1": [ {
->       "text": "tring",
->       "offset": 0,
->       "length": 5,
->       "options": [ {"text": "trying", "score": 0.8, "freq": 1 } ]
->     }, {
->       "text": "out",
->       "offset": 6,
->       "length": 3,
->       "options": []
->     }, {
->       "text": "elasticsearch",
->       "offset": 10,
->       "length": 13,
->       "options": []
->     } ],
->     "my-suggest-2": ...
->   }
+>     "_shards": ...
+>     "hits": ...
+>     "took": 2,
+>     "timed_out": false,
+>     "suggest": {
+>         "my-suggest-1": [ 
+>             {
+>                 "text": "tring",
+>                 "offset": 0,
+>                 "length": 5,
+>                 "options": [ {
+>                     "text": "trying",
+>                     "score": 0.8,
+>                     "freq": 1
+>                 } ]
+>             },
+>             {
+>                 "text": "out",
+>                 "offset": 6,
+>                 "length": 3,
+>                 "options": []
+>             },
+>             {
+>                 "text": "elasticsearch",
+>                 "offset": 10,
+>                 "length": 13,
+>                 "options": []
+>             }
+> 		],
+>         "my-suggest-2": ...
+>     }
 > }
 > ```
 

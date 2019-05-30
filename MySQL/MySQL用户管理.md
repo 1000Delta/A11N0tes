@@ -71,3 +71,12 @@ DROP USER 'username'@'host'
 SHOW GRANTS FOR 'user'@'host';
 ```
 
+
+
+## 允许用户从所有主机访问
+
+```mysql
+USE mysql;
+UPDATE user SET host='%' WHERE user='user';
+```
+
