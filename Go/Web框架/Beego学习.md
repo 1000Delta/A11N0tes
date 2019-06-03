@@ -2,6 +2,14 @@
 
 ## 路由
 
+```go
+package routers
+
+// init() ..
+```
+
+
+
 - **Restful函数式路由**：使用`beego.Router()`函数将控制器直接传入，然后通过直接调用其绑定方法（`.Get(), .Post()`）等限制访问
   - 最简单的路由**传入闭包**即可，闭包参数类型`*context.Context`
   - **传入控制器**需要传入其指针类型，例：`beego.Router("/", &controllers.MainController{})`
@@ -23,6 +31,27 @@
 - 从环境变量中获取配置项：`${env||value}` 如果环境变量存在则使用环境变量，否则使用`value`
 
 ## 控制器
+
+控制器结构：
+
+```go
+package controllers
+
+import (
+	"github.com/astaxie/beego"
+)
+
+type MainController struct {
+    beego.Controller
+}
+
+// Get
+func (v *MainController) Get() {
+    // do
+}
+```
+
+
 
 - 实现控制器只需匿名引入`beego.Controller`
 - 信息验证：实现`Prepare`方法，并在其中加入验证

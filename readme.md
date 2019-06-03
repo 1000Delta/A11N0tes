@@ -29,11 +29,13 @@
   - 流密码
     - RC4
     - A5/1
-  - [Block Cipher](信息安全/密码学/Block Cipher.md)
+  - [Block Cipher](信息安全/密码学/Block%20Cipher.md)
     - DES
     - AES
     - tea
 - [PHP异步编程](PHP/PHP%20异步编程.md)
+- LFU缓存算法
+- LRU缓存算法
 
 ## 目录
 
@@ -104,9 +106,11 @@
 **后端技术**
 
 - 数据库
-  1. redis
+  1. Redis
      1. [基本命令](./Redis/基本命令.md)
      2. [数据类型](./A11N0tes/Redis/数据类型.md)
+- 缓存
+    1. [LRU缓存算法](./后端/缓存/LRU缓存算法.md)
 
 **控制理论**（自动控制原理）
 
