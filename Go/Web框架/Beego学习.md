@@ -63,3 +63,12 @@ func (v *MainController) Get() {
 ## 模板
 
 - 模板文件/文件夹名必须小写
+
+## 模型 models
+
+- 定义的模型需要在`models.go`的`init()`中注册
+- 模型字段使用大驼峰命名，在数据库中会自动转成下划线命名
+    - Id -> id
+    - UserProfile -> user_profile
+- 设置数据库参数 [orm参数列表](https://beego.me/docs/mvc/model/models.md#%E8%AE%BE%E7%BD%AE%E5%8F%82%E6%95%B0)
+- 
