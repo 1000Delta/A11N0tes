@@ -31,3 +31,11 @@ slice := array[start:end]
 
 将会截取从`start`到`end`-1指定的数组元素组成切片
 
+
+
+## 切片分割
+
+```
+subSlice = slice[1:5]
+```
+
