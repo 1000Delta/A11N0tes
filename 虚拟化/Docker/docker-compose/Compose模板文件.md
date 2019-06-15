@@ -32,5 +32,6 @@ networks:
     - deploy 服务环境配置
     - ports 服务映射的端口
     - networks 服务使用的网络
+    - volumes 挂载的数据卷
     - ... 其他Docker容器相关的配置
 - networks 创建的网络
