@@ -4,7 +4,7 @@
 
 ## 替换墙外内容
 
-需要在GOPATH下创建文件夹并下载依赖:
+需要在GOROOT下创建文件夹并下载依赖:
 
 ```sh
 mkdir -p $GOROOT/src/golang.org/x
@@ -17,6 +17,9 @@ git clone https://github.com/golang/text
 git clone https://github.com/golang/crypto
 # golint
 git clone https://github.com/golang/lint
+
+# 安装依赖
+cd $GOROOT/src/golang.org/x/sync
 ```
 
 ## 使用代理
