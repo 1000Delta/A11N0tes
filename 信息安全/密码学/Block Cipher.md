@@ -8,17 +8,17 @@
 
 ### Encryption
 
-1. Split **plaintext**(明文) block into left and right halves: $P(L_0, R_0)​$
+1. Split **plaintext**(明文) block into left and right halves: $P(L_0, R_0)$
 
-2. Process iterate $i = 1, 2, 3, ..., n​$
+2. Process iterate $i = 1, 2, 3, ..., n$
 
-   $L_{i+1} = R_i​$
+   $L_{i+1} = R_i$
 
-   $R_{i+1} = L_i \oplus F(R_i, K_i)​$
+   $R_{i+1} = L_i \oplus F(R_i, K_i)$
 
-3. The ciphertext: $(L_{i+1}, R_{i+1})​$
+3. The ciphertext: $(L_{i+1}, R_{i+1})$
 
-$F(R_i, K_i)​$ 被称为费斯妥函数
+$F(R_i, K_i)$ 被称为费斯妥函数
 
 ## Data Encryption Standard
 
@@ -32,8 +32,8 @@ $F(R_i, K_i)​$ 被称为费斯妥函数
 
 ### $F(R_i, K_i)$ - 费斯妥函数
 
-- $R_i​$ 32 bits
-- $K_i​$ 56 bits
+- $R_i$ 32 bits
+- $K_i$ 56 bits
 
 #### Process $R_i$
 
@@ -61,7 +61,7 @@ $F(R_i, K_i)​$ 被称为费斯妥函数
 
    - 非线性组件，增加安全性
 
-   - Each S-box maps 6 bits to 4 bits
+   - Each S-box maps 6 bits to 4 bits 每个S盒将6位输入映射到4位输出
 
    - [置换表](https://zh.wikipedia.org/wiki/DES%E8%A1%A5%E5%85%85%E6%9D%90%E6%96%99#%E7%BD%AE%E6%8D%A2%E7%9B%92_(S%E7%9B%92))
 
@@ -81,16 +81,16 @@ $F(R_i, K_i)​$ 被称为费斯妥函数
 - 从64位输入密钥中使用[选择置换1](https://zh.wikipedia.org/wiki/DES%E8%A1%A5%E5%85%85%E6%9D%90%E6%96%99#%E9%80%89%E6%8B%A9%E7%BD%AE%E6%8D%A21(PC-1))选出56位，剩下的8位可以丢弃或者作为奇偶校验位
 - 56位密钥分成两个28bit子密钥
 
-- For **rounds** $i = 1, 2, ... 16​$
-  - let LK and RK ring shift left $r_i​$
+- For **rounds** $i = 1, 2, ... 16$
+  - let LK and RK ring shift left $r_i$
   - For rounds 1, 2, 9 and 16 the shift $r_i = 1$, and in all other rounds $r_i = 2$ 
 
   - 使用[选择置换2](https://zh.wikipedia.org/wiki/DES%E8%A1%A5%E5%85%85%E6%9D%90%E6%96%99#%E9%80%89%E6%8B%A9%E7%BD%AE%E6%8D%A22(PC-2))产生48位子密钥
 
 ### Triple DES
 
-- $C = E(D(E(P, K_1), K_2), K_1)​$
-- $P = D(E(D(P, K_1), K_2), K_1)​$
+- $C = E(D(E(P, K_1), K_2), K_1)$
+- $P = D(E(D(P, K_1), K_2), K_1)$
 
 ## Advanced Encryption Standard
 
@@ -194,6 +194,8 @@ $$
 ### CTR - Counter Mode
 
 计数器模式
+
+于前一段运算结果无关，可并行计算
 $$
 \begin{aligned}
 \text{Encrypt:}& \\

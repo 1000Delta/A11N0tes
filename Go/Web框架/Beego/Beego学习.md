@@ -72,3 +72,34 @@ func (v *MainController) Get() {
     - UserProfile -> user_profile
 - 设置数据库参数 [orm参数列表](https://beego.me/docs/mvc/model/models.md#%E8%AE%BE%E7%BD%AE%E5%8F%82%E6%95%B0)
 - 
+
+## 日志 logs
+
+- 日志分级
+
+    - Debug `logs.Debug()`
+    - Info `logs.Info()`
+    - Warning `logs.Warn()`
+    - Error `logs.Error()`
+    - Critical `logs.Critical()`
+
+- 操作模式
+
+    - 通用方式
+
+        ```go
+        // main.go
+        package main
+        
+        import (
+        	"github.com/astxie/beego/logs"
+        )
+        
+        func init() {
+            logs.SetLogger()
+        }
+        ```
+
+        
+
+        
