@@ -71,7 +71,12 @@ func (v *MainController) Get() {
     - Id -> id
     - UserProfile -> user_profile
 - 设置数据库参数 [orm参数列表](https://beego.me/docs/mvc/model/models.md#%E8%AE%BE%E7%BD%AE%E5%8F%82%E6%95%B0)
-- 
+    - `orm:""`
+        - `on_delete()` 对应关系字段删除时的操作
+            - cascade 级联删除（默认值）
+            - set_null 设置为null, 需要null = true, 即`orm:"null;"`
+            - set_default 设置为默认值，需要设置 default 值，`orm:"default(value)"`
+            - do_nothing 什么也不做,忽略
 
 ## 日志 logs
 
