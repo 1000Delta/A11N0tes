@@ -16,13 +16,13 @@
 
 - 对齐上下行用`&`，不同行相同位序的`&`会排版在同一列
 
-- 箭头$\leftarrow, \rightarrow​$ `\leftarrow`，`\rightarrow`
+- 箭头$\leftarrow, \rightarrow$ `\leftarrow`，`\rightarrow`
 
-- 无穷大 $\infin​$ `\infin`
+- 无穷大 $\infin$ `\infin`
 
 - 分段函数构建 使用`cases`环境
 
-- 乘法 $\cdot$ 点符号
+- 乘法 $\cdot$ 点符号 `\cdot`
 
 - 使上下语句对齐
 
@@ -31,5 +31,29 @@
   \end{aligned}
   ```
 
-  
+- 构建多值等式
+
+    ```latex
+    \begin{equation}
+    y = \left\{
+    \begin{aligned}
+    &1, \quad a;\\
+    &0, \quad b;\\
+    \end{aligned}
+    \right.
+    \end{equation}
+    ```
+
+    $$
+    \begin{equation}
+    y = \left\{
+    \begin{aligned}
+    &1, \quad a;\\
+    &0, \quad b;\\
+    \end{aligned}
+    \right.
+    \end{equation}
+    $$
+
+    
 

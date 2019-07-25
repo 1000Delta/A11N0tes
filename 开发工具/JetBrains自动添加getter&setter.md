@@ -3,3 +3,4 @@
 3. 选取需要创建getter & setter的属性
 
 Generate中其余功能也能快捷地创建指定方法。
+
