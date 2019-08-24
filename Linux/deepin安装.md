@@ -7,3 +7,4 @@
 ## deepin安装卡logo，然后进入busybox
 
 > emmmmmm应该是启动盘没装好，用官方工具重新做一次启动盘
+
