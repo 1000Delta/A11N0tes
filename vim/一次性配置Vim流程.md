@@ -17,6 +17,10 @@
    set ruler " 行号显示
    set number " 高亮当前行	
    set hlsearch " 高亮搜索内容
+   if has("gui_running") "检查是否运行在GUI模式下
+   set guifont=Microsoft\ YaHei\ Mono:h12 "设置字体和字号
+   endif
+   
    
    " 编码设置
    set encoding=utf-8
@@ -58,6 +62,9 @@
    set ruler " 行号显示
    set number " 高亮当前行	
    set hlsearch " 高亮搜索内容
+   if has("gui_running") "检查是否运行在GUI模式下
+   set guifont=Microsoft\ YaHei\ Mono:h12 "设置字体和字号
+   endif
    
    " 编码设置
    set encoding=utf-8
@@ -81,7 +88,8 @@
    
    " set the runtime path to include Vundle and initialize
    set rtp+=~/.vim/bundle/Vundle.vim
-   call vundle#begin()
+   let path='~/.vim/bundle/Vundle.vim'
+   call vundle#begin(path)
    " alternatively, pass a path where Vundle should install plugins
    "call vundle#begin('~/some/path/here')
    " let Vundle manage Vundle, required
@@ -171,7 +179,6 @@
    1. [Vundle](插件/0.插件管理Vundle.md)
    2. [YouCompleteMe](插件/安装YouCompleteMe.md)
    3. [Solarized主题](主题/Solarized.md)
-   4. [安装powwerline]()
+   4. [安装powerline]()
 
 3. 强化自动补全 - [参数补全CompleteParameter](插件/安装CompleteParameter.md)
-
