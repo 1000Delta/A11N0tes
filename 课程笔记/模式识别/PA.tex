@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec, xunicode, xltxtra}
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\usepackage{ctex}
+\usepackage{xcolor}
+\pagecolor[RGB]{7,54,66}
+\definecolor{fontcolor}{RGB}{253,246,227}
+
+\begin{document}
+\color{fontcolor}{}
+模式识别导论
+
+\section{绪论}
+
+\section{聚类分析}
+
+\subsection{距离聚类的概念}
+
+\subsection{相似性测度和聚类准则}
+
+\subsection{基于距离阈值的聚类算法}
+
+\subsection{层次聚类法}
+
+\subsection{动态聚类法}
+
+聚类过程中，聚类中心位置或个数发生变化.
+
+两种常用的算法：
+\begin{itemize}
+	\item K - 均值算法（或 C - 均值算法）
+	\item 迭代自组织的数据分析算法
+\end{itemize}
+
+\subsubsection{K - 均值算法}%
+\label{ssub:k_jun_zhi_suan_fa_}
+
+基于使聚类准则函数最小化。
+
+\paragraph{准则函数}%
+\label{par:zhun_ze_han_shu_}
+
+聚类集中每一样本点到该类中心的距离平方和。
+
+对于第j个聚集类，准则函数定义为：
+$$
+   J_j	= \sum^{N_j}_{i=1} || X_i - Z_j ||^2, X_i \in S_j
+$$
+
+\paragraph{算法描述}%
+\label{par:suan_fa_miao_shu_}
+
+\paragraph{算法讨论}%
+\label{par:suan_fa_tao_lun_}
+
+\paragraph{聚类准则函数 $J_k$ 与 $K$ 的关系曲线}%
+\label{par:ju_lei_zhun_ze_han_shu_j_k_yu_k_de_guan_xi_qu_xian_}
+
+\subsubsection{迭代自组织的数据分析算法}%
+\label{ssub:die_dai_zi_zu_zhi_de_shu_ju_fen_xi_suan_fa_}
+
+迭代自组织的数据分析算法也常称为 ISODATA 算法 (Iterate Selft-Organizing Data Analysis Techniques Algorithm, ISODATA).
+
+\paragraph{算法特点}%
+\label{par:suan_fa_te_dian_}
+
+\begin{itemize}
+	\item 加入了试探性步骤，组成人机交互的结构；
+	\item 可以通过类的自动合并与分裂得到较合理的类别数。
+\end{itemize}
+
+\paragraph{基本思路}%
+\label{par:ji_ben_si_lu_}
+
+\begin{enumerate}
+	\item 选择初始值
+	\item 按最邻近规则进行分类
+	\item 聚类后的处理：计算各类中的距离函数等指标
+	\item 判断结果是否符合要求，符合则结束，否则回到2
+\end{enumerate}
+
+\paragraph{算法描述}%
+\label{par:suan_fa_miao_shu_}
+
+P31
+
+\paragraph{常用指标}%
+\label{par:chang_yong_zhi_biao_}
+
+各指标综合考虑
+
+\begin{enumerate}
+	\item 聚类中心之间的距离
+	\item 诸聚类域中样本数目
+	\item 诸聚类域中样本的标准差向量
+\end{enumerate}
+
+\section{判别函数及几何分类法}
+
+\subsection{判别函数}
+
+统计模式识别
+$$
+	\left\{
+	\begin{aligned}
+		& \mbox{聚类分析法（第二章）}\\
+		& \mbox{判别函数法} 
+		\left\{
+		\begin{aligned}
+			& \left.
+			\begin{aligned}
+				& \mbox{线性判别函数法} \\
+				& \mbox{非线性判别函数法} \\
+			\end{aligned}
+			\right\} => xx
+				& \mbox{统计决策方法}
+		\end{aligned}
+		\right.
+	\end{aligned}
+	\right.
+$$
+\subsubsection{判别函数}%
+\label{ssub:pan_bie_han_shu_}
+
+\paragraph{定义}%
+\label{par:ding_yi_}
+
+直接用来对模式进行分类的准则函数。
+\end{document}
