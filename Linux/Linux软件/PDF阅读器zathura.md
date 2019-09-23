@@ -27,4 +27,20 @@ sudo pacman -S propper
 
 ## 配置文件
 
-`Zathura` 的配置文件名为`zathurarc` ，分为全局配置和用户配置，全局配置文件路径为 `/etc/`
+> 参考资料
+>
+> <https://www.helplib.com/ubuntu/article_161727>
+
+`Zathura` 的配置文件名为`zathurarc` ，分为全局配置和用户配置，全局配置文件路径为 `/etc/zathura/zathurarc`, 用户配置文件路径为`~/.config/zathura/zathurarc`
+
+###　颜色配置
+
+可以配置前景色和背景色（类solarized）：
+
+ ```
+set recolor true
+
+set recolor-darkcolor "#FDF6E3"
+set recolor-lightcolor "#073642"
+ ```
+
