@@ -1,0 +1,73 @@
+\documentclass[11pt]{book}
+\usepackage{fontspec, xunicode, xltxtra}
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\usepackage{ctex}
+\usepackage{xcolor}
+\usepackage{makeidx}
+
+\begin{document}
+    \begin{titlepage}
+        \title{机器人学基础}
+        \author{DX}
+        \maketitle
+    \end{titlepage}
+    \tableofcontents
+
+    \chapter{绪论}
+
+    \chapter{数学基础}
+
+    \chapter{机器人运动学}
+
+    \section{机器人运动方程的表示}
+
+    \section{机器人运动方程的求解}
+
+    \subsection{逆运动学求解的一般问题}
+
+    \subsubsection{解的存在性}
+
+    \subsubsection{多解性问题}
+
+
+    机器人系统在执行操控时只能选择一组解
+    
+    - 最短行程解
+    - 较长行程解
+    
+    \subsubsection{逆运动学的求解方法}
+
+    \subsection{逆运动学的代数解法和几何解法}
+    
+    \subsubsection{代数解法}
+
+
+    \subsubsection{几何解法}
+
+    \subsection{逆运动学的其他解法}
+
+    \subsubsection{欧拉变换解法}
+
+    欧拉方程表示运动姿态 P37
+
+    公式（3.48）
+
+    公式 (3.49) - (3.57) 
+    不可使用反三角函数直接求解（未知数周期性）
+
+    P51
+
+    \paragraph{概括}
+
+    如果已知一个表示任意旋转的齐次变换，那么就能确定其等价欧拉角：
+
+    \begin{equation}
+        \left\{
+            \begin{array}{ll}
+               \phi = atan2(a_y, a_x), \phi = \phi + 180 ^ \circ \\
+               \theta = atan2(c\phi a_x + s \phi a_y, a_x) \\
+               \psi = atan2(-s \phi n_x + c \phi n_y, -s \phi o_x + c \phi o_y)
+            \end{array}
+        \right.
+    \end{equation}
+\end{document}
