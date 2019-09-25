@@ -1,0 +1,71 @@
+\documentclass[11pt]{book}
+\usepackage{fontspec, xunicode, xltxtra}
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\usepackage{ctex}
+\usepackage{fontenc}
+\usepackage{amsmath}
+
+\begin{document}
+\chapter{Robotics运动学}
+
+\section{机器人运动方程的求解}
+
+\section{机器人运动分析和综合举例}
+
+以PUMA600为例
+
+\section{机器人的雅可比公式}
+
+\subsection{机器人的微分运动}
+
+\subsubsection{微分平移与旋转}%
+\label{ssub:wei_fen_ping_yi_yu_xuan_zhuan_}
+
+基坐标系中左乘，运动坐标系中右乘
+
+基坐标系：
+
+$$
+\begin{array}{ll}
+	T + dT &= Trans(d_x, d_y, d_z)Rot(f,d \theta)T \\
+	dT &= [Trans(d_x, d_y, d_z)Rot(f,d \theta)T - I]T
+\end{array}
+$$
+
+坐标系 ${T}$：
+
+$$
+\begin{array}{ll}
+	T + dT &= TTrans(d_x, d_y, d_z)Rot(f, d \theta) \\
+	dT &= T[Trans(d_x, d_y, d_z)Rot(f, d \theta) - I]
+\end{array}
+$$
+
+	当微分运动是对基系进行时，我们规定它为 $\triangle$ ；而运动是相对于坐标系 ${T}$ 来进行时，记为 ${}^T \triangle$ 。
+
+
+\subsubsection{微分运动的等价变换}%
+\label{ssub:wei_fen_yun_dong_de_deng_jie_bian_huan_}
+
+\paragraph{目的}%
+\label{par:mu_de_}
+
+把一个坐标系内的位子变换到另一坐标系内
+
+由 $dT = \Delta T = T {}^T \Delta$ 可得 ${}^T \Delta = T^{-1} \Delta T$
+
+\subparagraph{向量叉乘}%
+\label{par:xiang_liang_cha_cheng_}
+
+$$
+	\vec a \times \vec b = 
+	\left|
+		\begin{matrix}
+			\vec i & \vec j & \vec k \\
+			x_a & y_a & z_a \\
+			x_b & y_b & c_b
+		\end{matrix}
+	\right|
+	= (y_a c_b - z_a y_b) \vec i + (z_a x_b - x_a c_b) \vec j + (x_a y_b - y_a x_b) \vec k
+$$
+\end{document}

@@ -1,8 +1,9 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{book}
 \usepackage{xcolor}
 \pagecolor[RGB]{199, 237, 204}
 \usepackage{fontspec, xunicode, xltxtra}
 \usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\usepackage{ctex}
 
 \begin{document}
 
@@ -11,15 +12,15 @@
 \date{2019-09-17}
 \maketitle
 
-\section{控制系统的状态空间描述}   
+\chapter{控制系统的状态空间描述}   
 
-\subsection{控制系统状态空间的基本概念}
-
-
-\subsection{由系统的物理模型建立状态空间表达式}
+\section{控制系统状态空间的基本概念}
 
 
-\subsection{根据微分方程建立状态空间表达式}
+\section{由系统的物理模型建立状态空间表达式}
+
+
+\section{根据微分方程建立状态空间表达式}
 
 \paragraph{微分方程中不含输入函数导数项}%
 \label{par:微分方程中不含输入函数导数项}
@@ -55,13 +56,12 @@ $$
 \label{par:微分方程中含输入函数导数项}
 
 
-\subsection{系统传递函数矩阵与状态空间表达式的相互转换}
+\section{系统传递函数矩阵与状态空间表达式的相互转换}
 
 \paragraph{系统传递函数}%
 \label{par:系统传递函数}
 
-\subsubsection{直接分解法}%
-\label{ssub:直接分解法}
+\subsection{直接分解法}%
 
 $\ldots$
 
@@ -70,6 +70,67 @@ $\ldots$
 \paragraph{传递函数极点互异}%
 \label{par:传递函数极点互异}
 
+\subsection{状态空间表达式的线性变换及规范化}
 
+\subsubsection{系统的线性等价变换}%
+\label{ssub:xi_tong_de_xian_xing_deng_jie_bian_huan_}
+
+\subsubsection{系统的特征值及其不变性}%
+\label{ssub:xi_tong_de_te_zheng_zhi_ji_qi_bu_bian_xing_}
+
+\subsubsection{将系数矩阵 $A$ 化为对角线规范型}%
+\label{ssub:jiang_xi_shu_ju_zhen_a_hua_wei_dui_jiao_xian_gui_fan_xing_}
+
+\subsubsection{将系数矩阵 $A$ 化为约当(jordan)规范型}%
+\label{ssub:jiang_xi_shu_ju_zhen_a_hua_wei_yue_dang_jordan_gui_fan_xing_}
+
+特征值的代数重数等于几何重数时才能化为对角线规范型，否则只能化为 jordan 规范型，即：
+$$
+	\left\{
+	   \begin{array}
+		   \overline{\dot{x}} = \overline{Ax} + \overline{Bu} \\
+		   y = \overline{Cx} + \overline{Du}
+	   \end{array}
+	\right.
+$$
+其中，
+$$
+\overline{B} = P^{-1} B, \overline{C} = CP, D = D, \overline{A} = P^{-1}AP = 
+\left[
+	\begin{array}{cccc}
+		J_1 & & &  0 \\
+			& \lambda_{m+1} & & \\
+			& & \ddots &	\\
+			0 & & & \lambda_n
+	\end{array}
+\right]
+= \mathbf{J}
+$$
+
+\subsection{从状态空间表达式求取传递函数矩阵}
+
+对线性定长系统的状态空间方程求取拉氏变换，可得：
+$$
+aX(s) - X(0) = AX(s) + BU(s) \\
+Y(s) = CX(s) + DU(s)
+$$
+设初始条件 $X(0) = 0$ ，可得：
+$$
+sX(s) = AX(s) + BU(s) \\
+Y(s) = CX(s) + DU(s) 
+$$
+可求得系统的传递函数为：
+$$
+G(s) = \frac{Y(s)}{U(s)} = C (sI - A)^{-1} B + D	
+$$
+
+\subsection{离散系统的状态空间表达式}
+
+\section{小结}
+
+\begin{enumerate}
+	\item 状态空间表达式是由\textbf{输入方程}和\textbf{输出方程}组成的
+	\item \cdots
+\end{enumerate}
 
 \end{document}
