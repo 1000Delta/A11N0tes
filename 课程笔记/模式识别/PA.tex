@@ -1,27 +1,27 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{book}
 \usepackage{fontspec, xunicode, xltxtra}
 \usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
 \usepackage{ctex}
-\usepackage{xcolor}
+\usepackage{amsmath}
 
 \begin{document}
 \title{模式识别导论}
 \author{DX}
 \date{2019-09-21}
 
-\section{绪论}
+\chapter{绪论}
 
-\section{聚类分析}
+\chapter{聚类分析}
 
-\subsection{距离聚类的概念}
+\section{距离聚类的概念}
 
-\subsection{相似性测度和聚类准则}
+\section{相似性测度和聚类准则}
 
-\subsection{基于距离阈值的聚类算法}
+\section{基于距离阈值的聚类算法}
 
-\subsection{层次聚类法}
+\section{层次聚类法}
 
-\subsection{动态聚类法}
+\section{动态聚类法}
 
 聚类过程中，聚类中心位置或个数发生变化.
 
@@ -31,8 +31,7 @@
 	\item 迭代自组织的数据分析算法
 \end{itemize}
 
-\subsubsection{K - 均值算法}%
-\label{ssub:k_jun_zhi_suan_fa_}
+\subsection{K - 均值算法}%
 
 基于使聚类准则函数最小化。
 
@@ -55,8 +54,7 @@ $$
 \paragraph{聚类准则函数 $J_k$ 与 $K$ 的关系曲线}%
 \label{par:ju_lei_zhun_ze_han_shu_j_k_yu_k_de_guan_xi_qu_xian_}
 
-\subsubsection{迭代自组织的数据分析算法}%
-\label{ssub:die_dai_zi_zu_zhi_de_shu_ju_fen_xi_suan_fa_}
+\subsection{迭代自组织的数据分析算法}%
 
 迭代自组织的数据分析算法也常称为 ISODATA 算法 (Iterate Selft-Organizing Data Analysis Techniques Algorithm, ISODATA).
 
@@ -94,9 +92,9 @@ P31
 	\item 诸聚类域中样本的标准差向量
 \end{enumerate}
 
-\section{判别函数及几何分类法}
+\chapter{判别函数及几何分类法}
 
-\subsection{判别函数}
+\section{判别函数}
 
 统计模式识别
 $$
@@ -119,11 +117,126 @@ $$
 	\end{array}
 	\right.
 $$
-\subsubsection{判别函数}%
-\label{ssub:pan_bie_han_shu_}
+\subsection{判别函数}%
 
 \paragraph{定义}%
 \label{par:ding_yi_}
 
 直接用来对模式进行分类的准则函数。
+
+\section{线性判别函数}
+
+\subsection{线性判别函数的一般形式}
+
+$$
+d(\mathbf X) = w_1x_1 + w_2x_2 + \ldots + w_nx_n + w_{n+1} = \mathbf{W}^T_0 \mathbf{X} w_{n+1}
+$$
+式中，$\mathbf{W}_0 = [w_1, w_2, \ldots, w_n]^T$ 称为权向量或参数向量；$\mathbf{X} = [x_1, x_2, \ldots, x_n]^T$ 是 $n$ 维特征向量，又称模式向量或样本向量；$w_{n+1}$ 是常数，称为阈值权。
+
+
+\subsection{线性判别函数的性质}
+
+\subsubsection{两类情况}%
+\label{ssub:liang_lei_qing_kuang_}
+
+若已知两类模式 $\omega_1$ 和 $\omega_2$
+
+\section{广义线性判别函数}
+
+\section{线性判别函数的集合性质}
+
+\section{感知器算法}
+
+\subsection{前置概念}
+
+\paragraph{训练与学习}%
+\label{par:xun_lian_yu_xue_xi_}
+
+\paragraph{确定性分类器}%
+\label{par:que_ding_xing_fen_lei_qi_}
+
+\paragraph{感知器}%
+\label{par:gan_zhi_qi_}
+
+感知器（preception）是一种神经网络模型，$\ldots$
+
+\subsection{算法描述}
+
+\paragraph{规范化处理}%
+\label{par:gui_fan_hua_chu_li_}
+
+将第二类样本全部乘以 $(-1)$ 使得对于所有两类样本，判别函数的性质描述为
+\begin{equation}
+	d(\mathbf X) = \mathbf W^T \mathbf X > 0
+\end{equation}
+
+\paragraph{算法步骤}%
+\label{par:suan_fa_bu_zou_}
+
+P54
+
+
+感知器算法就是一种赏罚过程：当分类器发生分类错误时，对分类器进行“罚”---修改权向量，使其向正确的方向转换；分类正确时，对其进行“赏”---这里表现为“不罚”，即权向量不变。
+
+\subsection{收敛性}
+
+经过算法的有限次迭代运算后，求出一个使训练集中所有样本都能正确分类的 $W$，则称算法是收敛的。可以证明感知器算法是收敛的。
+
+\subsection{感知器算法用于多类情况}
+
+转化成多个二类可分问题
+
+对于 $M$ 类模式应存在 $M$ 个判别函数 $\ldots$ P56
+
+\section{梯度法}
+
+\subsection{梯度法基本原理}
+
+\paragraph{梯度}%
+\label{par:ti_du_}
+
+设函数 $f(\mathbf{Y})$ 是向量 $\mathbf{Y} = [y_1, y_2, \ldots, y_n]^T$ 的函数，则 $f(\mathbf Y)$的梯度定义为：
+$$
+\nabla f(\mathbf Y) = \frac{d}{d \mathbf Y} f(\matnbf Y) = \Big[ \frac{\partial f}{\partial y_1} , \frac{\partial f}{\partial y_2} , \ldots, \frac{\partial f}{\partial y_n} \Big]^T
+$$
+
+梯度向量的最重要的性质之一：指出函数 $f$ 在其自变量增加时，增长最快的方向。
+
+\subsubsection{梯度算法}%
+\label{ssub:ti_du_suan_fa_}
+
+P59
+
+\subsection{固定增量法}
+
+\paragraph{准则函数}%
+\label{par:zhun_ze_han_shu_}
+
+$J(W, X) = \frac{1}{2}(|W^T X| - W^T X)$
+
+该准则函数有唯一最小值 $0$
+
+\paragraph{推导 $\nabla J$}%
+\label{par:tui_dao_nabla_j_}
+
+\paragraph{求 $W(k+1)$}%
+\label{par:qiu_w_k_1_}
+
+$$
+W(k+1) = W(k) + 
+\left\{
+\begin{aligned}
+	& 0, &W^T(k) X > 0 \\
+	& cX, & W^T(k) X \leq 0
+\end{aligned}
+\right.
+$$
+\section{最小平方误差算法}
+
+least Mean Square Error, LSME
+
+\paragraph{原理}%
+\label{par:yuan_li_}
+
+把对满足 $XW > 0$ 的q求解，改为满足
 \end{document}

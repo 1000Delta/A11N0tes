@@ -1,41 +1,41 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{book}
 \usepackage{fontspec, xunicode, xltxtra}
 \usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
 \usepackage{ctex}
-\usepackage{xcolor}
+
 \begin{document}
 \title{传感器检测技术及仪表}
 \author{DX}
 \date{2019-09-21}
 \maketitle
 \tableofcontents
-\section{绪论}
+\chapter{绪论}
 
-\section{检测系统的基本特性}
+\chapter{检测系统的基本特性}
 
-\section{阻抗型传感器}
-\subsection{电阻型传感器}
-\subsubsection{电位器式传感器}%
-\label{ssub:dian_wei_qi_shi_chuan_gan_qi_}
+\chapter{阻抗型传感器}
+\section{电阻型传感器}
+\subsection{电位器式传感器}%
+\label{sub:dian_wei_qi_shi_chuan_gan_qi_}
 
-\subsubsection{应变式传感器}%
-\label{ssub:ying_bian_shi_chuan_gan_qi_}
+\subsection{应变式传感器}%
+\label{sub:ying_bian_shi_chuan_gan_qi_}
 
-\subsubsection{热电阻和热敏电阻}%
-\label{ssub:re_dian_zu_he_re_min_dian_zu_}
+\subsection{热电阻和热敏电阻}%
+\label{sub:re_dian_zu_he_re_min_dian_zu_}
 
-\subsection{电容型传感器}
-\subsubsection{变极距型电容式传感器}%
-\label{ssub:bian_ji_ju_xing_dian_rong_shi_chuan_gan_qi_}
+\section{电容型传感器}
+\subsection{变极距型电容式传感器}%
+\label{sub:bian_ji_ju_xing_dian_rong_shi_chuan_gan_qi_}
 
-\subsubsection{变面积型电容式传感器}%
-\label{ssub:bian_mian_ji_xing_dian_rong_shi_chuan_gan_qi_}
+\subsection{变面积型电容式传感器}%
+\label{sub:bian_mian_ji_xing_dian_rong_shi_chuan_gan_qi_}
 
-\subsubsection{变介质型电容式传感器}%
-\label{ssub:bian_jie_zhi_xing_dian_rong_shi_chuan_gan_qi_}
+\subsection{变介质型电容式传感器}%
+\label{sub:bian_jie_zhi_xing_dian_rong_shi_chuan_gan_qi_}
 
-\subsubsection{测量电路}%
-\label{ssub:ce_liang_dian_lu_}
+\subsection{测量电路}%
+\label{sub:ce_liang_dian_lu_}
 
 \paragraph{比例运算法电路}%
 \label{par:bi_li_yun_suan_fa_dian_lu_}
@@ -57,14 +57,14 @@ $$
 $$
 可见对于\{变极距型电容式传感器}，在电阻极大时呈线性。
 
-\subsubsection{电容式传感器及其应用}%
-\label{ssub:dian_rong_shi_chuan_gan_qi_ji_qi_ying_yong_}
+\subsection{电容式传感器及其应用}%
+\label{sub:dian_rong_shi_chuan_gan_qi_ji_qi_ying_yong_}
 
-\subsubsection{电容式传感器与智能手机}%
-\label{ssub:dian_rong_shi_chuan_gan_qi_yu_zhi_neng_shou_ji_}
+\subsection{电容式传感器与智能手机}%
+\label{sub:dian_rong_shi_chuan_gan_qi_yu_zhi_neng_shou_ji_}
 
-\subsubsection{知识讲座 --- 生物识别技术}%
-\label{ssub:subsubsection_namezhi_shi_jiang_zuo_sheng_wu_shi_bie_ji_zhu_}
+\subsection{知识讲座 --- 生物识别技术}%
+\label{sub:subsubsection_namezhi_shi_jiang_zuo_sheng_wu_shi_bie_ji_zhu_}
 
 通过对各种生物特征进行识别，指纹、虹膜
 
@@ -74,4 +74,76 @@ $$
 生物识别的技术核心在于将各种生物特征转换成数字信息，并使用有效的匹配算法来进行鉴别
 
 略
+
+\chapter{电压型传感器}
+
+\section{磁电式传感器}
+
+\subsection{基本原理和组成}
+
+$N$ 匝线圈每通过相同的变化的磁通量 $\Phi$，则整个线圈中所产生的感应电动势为
+$$
+	e = - N \frac{d \Phi}{d t} 
+$$
+磁电式传感器基本由以下三个部分构成
+\begin{itemize}
+	\item 磁路系统
+	\item 线圈
+	\item 运动机构
+\end{itemize}
+
+\subsection{结构类型}
+
+\subsubsection{变磁通型}%
+\label{ssub:bian_ci_tong_xing_}
+
+导磁材料制成的动铁心运动使铁心和磁路磁阻变化引起磁通变化，从而在线圈中引起感应电动势
+
+\subsubsection{恒磁通型}%
+\label{ssub:heng_ci_tong_xing_}
+
+感应电动势由永磁体与线圈之间有相对运动产生
+
+\subsubsection{应用}%
+\label{ssub:ying_yong_}
+
+\begin{itemize}
+	\item 转速测量
+	\item $\ldots$
+\end{itemize}
+
+\section{压电式传感器}
+
+\section{热电偶传感器}
+
+\section{光电式传感器}
+
+\section{霍尔传感器}
+
+\paragraph{霍尔效应}%
+\label{par:huo_er_xiao_ying_}
+
+\subparagraph{霍尔常数}%
+\label{par:huo_er_chang_shu_}
+
+$$
+	R_H = \frac{1}{nq}
+$$
+
+\subparagraph{霍尔电压}%
+\label{par:huo_er_dian_ya_}
+
+$$
+	U_H = \frac{R_h I B}{d} 
+$$
+
+\subsection{霍尔元件基本结构}
+
+\begin{itemize}
+	\item 霍尔片
+	\item 引线
+	\item 壳体
+\end{itemize}
+
+霍尔片是一块半导体矩形薄片，在短边的两个焊面焊上两根控制电流端引线，在元件长边的中间以点的形式焊上两根霍尔输出端引线
 \end{document}
