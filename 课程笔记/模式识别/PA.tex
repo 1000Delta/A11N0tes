@@ -239,4 +239,105 @@ least Mean Square Error, LSME
 \label{par:yuan_li_}
 
 把对满足 $XW > 0$ 的q求解，改为满足
+\begin{equation}
+ XW = B
+\end{equation}
+式中：\\
+$B = [b_1, b_2, \ldots, b_i, \ldots, b_N]^T$ 是各分量均为正值的分量
+
+\paragraph{矛盾方程组}%
+\label{par:mao_dun_fang_cheng_zu_}
+
+在方程组中，当方程个数多于未知数时，通常没有精确解存在，称为矛盾方程组，一般求近似解。在模式识别中由于训练样本数 $N$ 总是大于模式的维数 $n$，因此在式中方程的个数总是大于未知数 $W$ 分量的个数，是矛盾方程组，只能求近似解。方法是求满足
+\begin{equation}
+	|| X W^* - B || = \text{极小}
+\end{equation}
+的 $W^*$，称为最小二乘近似解，也称最优近似解。
+
+\paragraph{准则函数}%
+\label{par:zhun_ze_han_shu_}
+
+LMSE 算法的准则函数定义为：
+\begin{equation}
+	J(W, X, B) = \frac{1}{2} || X W - B ||^2
+\end{equation}
+
+\paragraph{LMSE算法递推公式的推导}%
+\label{par:lmsesuan_fa_di_tui_gong_shi_de_tui_dao_}
+
+\subparagraph{伪逆矩阵}%
+\label{par:wei_ni_ju_zhen_}
+
+$X^# = (X^T X)^{-1}X^T$ 称为 $X$ 的伪逆
+
+\paragraph{模式类别可分性的判别}%
+\label{par:mo_shi_lei_bie_ke_fen_xing_de_pan_bie_}
+
+\subparagraph{方法}%
+\label{par:fang_fa_}
+
+每次迭代计算后检查一下 $XW(k)$ 的各分量和误差向量 $e(k)$，从而可以判断是否收敛。具体情况见 P66
+
+
+
+\subsection{算法特点}
+
+\section{非线性判别函数}
+
+\paragraph{线性判别函数的特点}%
+\label{par:xian_xing_pan_bie_han_shu_de_te_dian_}
+
+形式简单，容易学习；用于线性可分的模式类。
+
+\paragraph{非线性判别函数}%
+\label{par:fei_xian_xing_pan_bie_han_shu_}
+
+用于线性不可分情况，分段线性，超曲面
+
+\subsection{分段线性判别函数}
+
+\paragraph{特点}%
+\label{par:te_dian_}
+
+\begin{itemize}
+	\item 相对简单
+	\item 能逼近各种形状的超曲面
+\end{itemize}
+
+\subsubsection{一般分段线性判别函数}%
+\label{ssub:yi_ban_fen_duan_xian_xing_pan_bie_han_shu_}
+
+P70
+
+用各类函数进行分类判决实际上是用各类选出的子类判别函数进行判决 => 判别面由子类的判别函数决定。
+
+\subsubsection{基于距离的分段线性
+判别函数}%
+\label{ssub:ji_yu_ju_chi_de_fen_duan_xian_xing_pan_bie_han_shu_}
+
+P71
+
+\subsection{分段线性判别函数的学习方法}
+
+\subsubsection{已知子类划分时的学习方法}%
+
+\begin{itemize}
+	\item 每个子类看成独立的类
+	\item 应用线性可分多类情况3的学习算法
+\end{itemize}
+\subsubsection{已知子类数目时的学习方法}%
+\label{ssub:yi_zhi_zi_lei_shu_mu_shi_de_xue_xi_fang_fa_}
+
+\subsubsection{未知子类数目时的学习方法}%
+\label{ssub:wei_zhi_zi_lei_shu_mu_shi_de_xue_xi_fang_fa_}
+
+
+
+\chapter{基于统计决策的概率分类法}
+
+
+\label{ssub:yi_zhi_zi_lei_hua_fen_shi_de_xue_xi_fang_fa_}
+
+
+
 \end{document}
