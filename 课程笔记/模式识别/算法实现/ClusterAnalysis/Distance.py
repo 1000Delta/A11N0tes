@@ -1,14 +1,15 @@
 # encoding: utf-8
 
 import numpy
+import math
 
 class Distance:
 
-    def __init__(self, numpy.array x1, numpy.array x2):
+    def __init__(self, v1, v2):
         # 向量维度检查
         if a.shape != b.shape and len(x1.shape) != 1
-        self.x1 = x1
-        self.x2 = x2
+        self.v1 = v1
+        self.v2 = v2
 
     ''' eculidDistance
     欧式距离
@@ -16,6 +17,9 @@ class Distance:
     '''
     def eculidDistance(self):
         # 向量维数判断
-        if len(a.shape) != 1 and a.shape != b.shape:
+        if len(self.v1.shape) != 1 and self.v1.shape != self.v2.shape:
             return (0, False)
-        return (1, true)
+        l = 0
+        for i in range(self.v1.shape):
+            l += (v1[i] - v2[i]) ** 2
+        return math.sqrt(l)

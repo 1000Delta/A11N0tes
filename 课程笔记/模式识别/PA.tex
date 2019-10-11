@@ -361,6 +361,8 @@ P71
 
 在概率中，要看$X$来自于哪一类，使用后验概率$P(\omega_i | \boldsymbol{X})$效果最好
 
+利用贝叶斯公式将后验概率转化成易于得到的$P(\boldsymbol{X}|\omega_i)$和$P(\omega_i)$.
+
 \paragraph{决策规则}%
 \label{par:jue_ce_gui_ze_}
 
@@ -418,17 +420,74 @@ P87 风险计算
 \subsubsection{正态分布的最小错误率贝叶斯决策规则}%
 \label{ssub:zheng_tai_fen_bu_de_zui_xiao_cuo_wu_lu_bei_xie_si_jue_ce_gui_ze_}
 
+当$p(\boldsymbol{X}|\omega_i)$呈正态分布时，只需要知道$M$和$C$即可。
 
+\paragraph{多类情况}%
+\label{par:duo_lei_qing_kuang_}
+
+具有$M$中模式类别的多元高斯分布函数:
+
+\paragraph{两类问题}%
+\label{par:liang_lei_wen_ti_}
+
+对应判别函数
+
+不同判别面
 
 \section{贝叶斯分类器的错误率}
 
-\section{聂曼--皮尔逊决策}
+\subsection{错误率的概念}
+
+\paragraph{错误率}%
+\label{par:cuo_wu_lu_}
+
+将应属于某一类的模式错分到其他类中的概率。是衡量分类器性能优劣的重要参数。
+
+\begin{equation}
+	\mbox{定义为} P(e) = \int_{-\inf}^{\inf} P(e | \boldsymbol{X}) d\boldsymbol{X}
+\end{equation}
+
+式中：
+$\boldsymbol{X} = [x_1, \ldots, x_n]^{\text{T}$ ; $p(e | \boldsymbol{X})$ 是$\boldsymbol{X}$的条件概率
+
+\subsection{错误率分析}
+
+\subsubsection{两类问题的错误率}%
+\label{ssub:liang_lei_wen_ti_de_cuo_wu_lu_}
+
+两类的错分
+
+错误率计算
+
+\subsubsection{正态分布贝叶斯决策的错误率计算}%
+\label{ssub:zheng_tai_fen_bu_bei_xie_si_jue_ce_de_cuo_wu_lu_ji_suan_}
+
+\paragraph{正态分布的对数似然比}%
+\label{par:zheng_tai_fen_bu_de_dui_shu_si_ran_bi_}
+
+\subsection{错误率的估计}
+
+\paragraph{已设计好分类器时错误率的估计}%
+\label{par:yi_she_ji_hao_fen_lei_qi_shi_cuo_wu_lu_de_gu_ji_}
+
+\begin{enumerate}
+	\item 先验概率未知 --- 随机抽样
+	\item 先验概率已知 --- 选择性抽样
+\end{enumerate}
+
+留一法
+
+交叉法
+
+\section{聂曼-皮尔逊(Neyman-Person)决策}
+
+
 
 \section{概率密度函数的参数估计}
 
 \section{概率密度函数的非参数估计}
 
-\section{后验概率密度函数分类额势函数方法}
+\section{后验概率密度函数分类的势函数方法}
 
 
 
