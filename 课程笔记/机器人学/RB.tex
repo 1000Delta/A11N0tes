@@ -6,7 +6,112 @@
 \usepackage{amsmath}
 
 \begin{document}
+
+\begin{titlepage}
+	\title{机器人学基础}
+	\author{DX}
+	\maketitle
+\end{titlepage}
+
+\tableofcontents
+
+\chapter{绪论}
+
+\chapter{数学基础}
+
+\section{位姿和坐标系描述}
+
+\section{平移和旋转坐标系映射}
+
+\section{平移和旋转其次坐标变换}
+
+\section{物体的变换和变换方程}
+
+\section{通用旋转变换}
+
+\paragraph{公式}%
+\label{par:gong_shi_}
+
+\begin{equation}
+	Rot(\boldsymbol{f},\theta) = \left[
+		\begin{matrix}
+			f_x f_x vers\theta + c\theta & f_y f_x vers\theta - f_z s\theta & f_z f_x vers\theta + f_y s\theta \\
+			f_x f_y vers\theta + f_z s\theta & f_y f_y vers\theta - c\theta & f_z f_y vers\theta + f_x s\theta \\
+			f_x f_z vers\theta + f_y s\theta & f_y f_y vers\theta - s\theta & f_z f_z vers\theta + c\theta \\
+		\end{matrix}
+	\right]
+\end{equation}
+
 \chapter{Robotics运动学}
+\section{机器人运动方程的表示}
+
+\subsection{机械手运动姿态和方向角的表示}
+
+\paragraph{$\boldsymbol{A}$矩阵}%
+\label{par:_a_ju_zhen_}
+
+描述连杆坐标系见相对平移和旋转的齐次变换矩阵
+
+\paragraph{$\boldsymbol{T}$矩阵}%
+\label{par:_t_ju_zhen_}
+
+描述连杆坐标系与基坐标系相对平移和旋转的齐次变换矩阵
+
+$$
+	\boldsymbol{T}_6 = \boldsymbol{A}_6 \boldsymbol{A}_5 \boldsymbol{A}_4 \boldsymbol{A}_3 \boldsymbol{A}_2 \boldsymbol{A}_1
+$$
+
+相对前一坐标系运动为左乘
+
+\section{机器人运动方程的求解}
+
+\subsection{逆运动学求解的一般问题}
+
+\subsubsection{解的存在性}
+
+\subsubsection{多解性问题}
+
+
+机器人系统在执行操控时只能选择一组解
+
+- 最短行程解
+- 较长行程解
+
+\subsubsection{逆运动学的求解方法}
+
+\subsection{逆运动学的代数解法和几何解法}
+
+\subsubsection{代数解法}
+
+
+\subsubsection{几何解法}
+
+\subsection{逆运动学的其他解法}
+
+\subsubsection{欧拉变换解法}
+
+欧拉方程表示运动姿态 P37
+
+公式（3.48）
+
+公式 (3.49) - (3.57) 
+不可使用反三角函数直接求解（未知数周期性）
+
+P51
+
+\paragraph{概括}
+
+如果已知一个表示任意旋转的齐次变换，那么就能确定其等价欧拉角：
+
+\begin{equation}
+    \left\{
+        \begin{array}{ll}
+           \phi = atan2(a_y, a_x), \phi = \phi + 180 ^ \circ \\
+           \theta = atan2(c\phi a_x + s \phi a_y, a_x) \\
+           \psi = atan2(-s \phi n_x + c \phi n_y, -s \phi o_x + c \phi o_y)
+        \end{array}
+    \right.
+\end{equation}
 
 \section{机器人运动方程的求解}
 
@@ -68,4 +173,200 @@ $$
 	\right|
 	= (y_a c_b - z_a y_b) \vec i + (z_a x_b - x_a c_b) \vec j + (x_a y_b - y_a x_b) \vec k
 $$
+
+P65
+
+$$
+\left[
+	\begin{matrix}
+		{}^Td \\
+		{}^T \delta
+	\end{matrix}
+\right]
+=
+\left[
+	\begin{matrix}
+		R^T & -R^TS(p) \\
+		0 & R^T
+	\end{matrix}
+\right]
+\left[
+	\begin{matrix}
+		d \\
+		\delta
+	\end{matrix}
+\right]
+$$
+
+\subsubsection{变换式中的微分关系}%
+\label{ssub:bian_huan_shi_zhong_de_wei_fen_guan_xi_}
+
+P67
+
+\subsection{雅可比矩阵的定义与求解}
+
+\subsubsection{定义}%
+\label{ssub:ding_yi_}
+
+机械手的操作速度与关节速度的线性变换定义为机器人的雅可比矩阵
+
+\subsubsection{雅可比矩阵的求法}%
+\label{ssub:ya_ke_bi_ju_zhen_de_qiu_fa_}
+
+\paragraph{矢量积法}%
+\label{par:shi_liang_ji_fa_}
+
+P69  \\
+
+对移动关节
+$$
+	\left[
+		\begin{matrix}
+			v \\
+			w
+		\end{matrix}
+	\right]
+	=
+	\left[
+		\begin{matrix}
+			z_i \\
+			0
+		\end{matrix}
+	\right] \dot{q_i}
+	,\quad
+	\mathbf{J}_i = 
+	\left[
+		\begin{matrix}
+			z_i \\
+			0
+		\end{matrix}
+	\right]
+$$
+
+对转动关节
+
+P70 (3.143)
+
+\chapter{机器人动力学}
+
+两类问题：
+\begin{itemize}
+	\item 动力学正问题: 
+		已知机械手各关节的作用力或力矩，求各关节的位移、速度、加速度、运动轨迹；
+	\item 动力学逆问题: 
+		已知机械手的运动轨迹，即各关节的位移、速度和加速度，求各关节的驱动力和力矩。
+\end{itemize}
+
+\section{机器人刚体动力学}
+
+\paragraph{拉格朗日函数}%
+\label{par:la_ge_lang_ri_han_shu_}
+
+定义为系统的动能$K$和位能$P$之差：
+
+$$
+	L = K - P
+$$
+
+\paragraph{Lagrange 方程}%
+\label{par:lagrangefang_cheng_}
+
+$$
+	\frac{d}{dt} \frac{\partial T}{\partial q_j} = Q_j 
+$$
+
+\begin{description}
+ \item[$T$] 系统动能
+ \item[$q_j$] 广义坐标
+ \item[$Q_j$] 对应于广义坐标的广义力
+\end{description}
+
+\subsection{刚体的动能与位能}
+
+P80
+
+求取动力学方程的关键是求出各能量函数$K, P, D, W$的广义坐标表达式
+
+\paragraph{矩阵形式}%
+\label{par:ju_zhen_xing_shi_}
+
+P81
+
+\subsection{机械手动力学方程的求法}
+
+$$
+	\begin{bmatrix}
+		T_1 \\
+		T_2
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		D_{11} & D_{12} \\
+		D_{21} & D_{22}
+	\end{bmatrix}
+	\begin{bmatrix}
+		\ddot\theta_1 \\
+		\ddot\theta_2
+	\end{bmatrix}
+	+
+	\begin{bmatrix}
+		D_{111} & D_{122} \\
+		D_{211} & D_{222}
+	\end{bmatrix}
+	\begin{bmatrix}
+		\dot\theta_1^2 \\
+		\dot\theta_2^2
+	\end{bmatrix}
+	\begin{bmatrix}
+		D_{112} & D_{121} \\
+		D_{212} & D_{221}
+	\end{bmatrix}
+	\begin{bmatrix}
+		\dot\delta_1 \dot\delta_2 \\
+		\dot\delta_2 \dot\delta_1
+	\end{bmatrix}
+	+
+	\begin{bmatrix}
+		D_1 \\
+		D_2
+	\end{bmatrix}
+$$
+
+\section{机械手动力学方程的计算与简化}
+
+\subsection{速度的计算}
+
+P 87
+
+对任意连杆上的某一点，其位置为
+\begin{equation}
+	{}^0 \boldsymbol{r} = \boldsymbol{T}_i {}^i \boldsymbol{r}
+\end{equation}
+
+
+
+\paragraph{矩阵的迹}%
+\label{par:ju_zhen_de_ji_}
+
+对于$n$阶方阵来说，其迹即为它的主对角线上各元素之和
+$$
+Trace = \sum^{n}_{i=1} a_{ii}
+$$
+
+\paragraph{速度平方}%
+\label{par:su_du_ping_fang_}
+
+\begin{equation}
+	\boldsymbol{v}^2 = ( \frac{dr}{dt} )^2 = \text{Trace}[ \sum^{i}_{j=1} \frac{\partial \boldsymbol{T}_i}{\partial q_j} \dotq_j {}^i \boldsymbol{r} \sum^{i}_{k=1} ( \frac{\partial \boldsymbol{T}_i}{\partial q_k} \dotq_k {}^i \boldsymbol{r})^\text{T}]
+\end{equation}
+
+\subsection{动能和位能的计算}
+
+\paragraph{伪惯量矩阵$ \boldsymbol{I} $}%
+\label{par:wei_guan_liang_ju_zhen_mbsi_}
+
+P88
+
+简化公式 P89 (4.18)
+
 \end{document}

@@ -6,3 +6,5 @@ preception.py
 
 '''
 
+def perception():
+    

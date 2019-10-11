@@ -338,6 +338,100 @@ P71
 
 \label{ssub:yi_zhi_zi_lei_hua_fen_shi_de_xue_xi_fang_fa_}
 
+\section{研究对象及相关概率}
+
+\subsection{两类研究对象}
+
+\begin{itemize}
+	\item 确定性事件 事物间有确定的因果关系。
+	\item 随机事件 事物间没有确定的因果关系，观察到的特征具有统计特性，是一个随机向量。
+\end{itemize}
+
+\subsection{概率知识}
+
+略
+
+\section{贝叶斯决策}
+
+
+\subsection{最小错误率贝叶斯决策}
+
+\paragraph{问题分析}%
+\label{par:wen_ti_fen_xi_}
+
+在概率中，要看$X$来自于哪一类，使用后验概率$P(\omega_i | \boldsymbol{X})$效果最好
+
+\paragraph{决策规则}%
+\label{par:jue_ce_gui_ze_}
+
+设有$M$类模式，分类规则为: 
+\begin{equation}
+	\mbox{若}P(\omega_i | \boldsymbol{X}) = \text{max}\{P(\omega_j | \boldsymbol{X}), \quad j = 1, 2, \ldots, M\}
+\end{equation}
+上式称为最小错误率贝叶斯决策规则。
+
+由于先验概率$P(\omega_i)$和类概率函数 P85
+
+对两类问题，该式相当于
+
+\subsection{最小风险贝叶斯决策}
+
+\subsubsection{风险的概念}%
+\label{ssub:feng_xian_de_gai_nian_}
+
+\begin{itemize}
+	\item 自动灭火系统
+	\item 疾病判断
+\end{itemize}
+
+不同的错判造成的损失不同，因此疾病风险不同，两者紧密相连。
+
+\subsubsection{决策规则}%
+\label{ssub:jue_ce_gui_ze_}
+
+P87 风险计算
+
+决策规则:
+\begin{equation}
+	\mbox{若}r_k(\boldsymbol{X}) = \text{min}\{r_i(\boldsymbol{X}), i = 1, \ldots, M\}, \mbox{则}\boldsymbol{X} \in \omega_k
+\end{equation}
+
+\subsubsection{(0-1)损失最小风险贝叶斯决策}%
+\label{ssub:_0_1_sun_shi_zui_xiao_feng_xian_bei_xie_si_jue_ce_}
+
+\subsection{正态分布模式的贝叶斯决策}
+
+正态分布概率模型的优点
+\begin{itemize}
+	\item 物理上的合理性
+	\item 数学上的简单性
+\end{itemize}
+
+\subsubsection{正态分布}%
+\label{ssub:zheng_tai_fen_bu_}
+
+略
+
+\subsubsection{多变量正态随机向量}%
+\label{ssub:duo_bian_liang_zheng_tai_sui_ji_xiang_liang_}
+
+\subsubsection{正态分布的最小错误率贝叶斯决策规则}%
+\label{ssub:zheng_tai_fen_bu_de_zui_xiao_cuo_wu_lu_bei_xie_si_jue_ce_gui_ze_}
+
+
+
+\section{贝叶斯分类器的错误率}
+
+\section{聂曼--皮尔逊决策}
+
+\section{概率密度函数的参数估计}
+
+\section{概率密度函数的非参数估计}
+
+\section{后验概率密度函数分类额势函数方法}
+
+
+
 
 
 \end{document}
