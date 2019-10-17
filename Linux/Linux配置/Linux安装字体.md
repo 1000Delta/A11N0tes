@@ -14,12 +14,10 @@
    sudo fc-scale -fv
    ```
 
-    Arch:
+    Arch系:
 
     ```bash
     sudo fc-cache -vf
     ```
 
-
 之后就可以使用了
-
