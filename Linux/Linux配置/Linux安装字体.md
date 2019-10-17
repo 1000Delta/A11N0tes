@@ -6,11 +6,20 @@
 
 3. 在目录下打开终端，执行命令：
 
+    ubuntu:
+
    ```bash
    sudo mkfontscale
    sudo mkfontdir
    sudo fc-scale -fv
    ```
 
-   之后就可以使用了
+    Arch:
+
+    ```bash
+    sudo fc-cache -vf
+    ```
+
+
+之后就可以使用了
 
