@@ -8,7 +8,6 @@ Settings > Editor > Code Style > 指定语言 > Code Generation > Comment Code
 
 ## 智能提示忽略大小写
 
-Settings > Editor > General > Code Completion 
+Settings > Editor > General > Code Completion
 
 取消勾选 Match case
-
