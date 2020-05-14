@@ -1,9 +1,9 @@
-# docker新安装无法启动问题
+# docker 新安装无法启动问题
 
-笔者下载的docker在重启后出现了无法启动的问题，搜索了诸多解决方案，但是没有作用：
+笔者下载的 docker 在重启后出现了无法启动的问题，搜索了诸多解决方案，但是没有作用：
 
-1. [docker无法正常启动：Failed to start Docker Application Container Engine](https://blog.csdn.net/qq_35981283/article/details/80857913)
-2. [docker重启后启动失败Failed to start Docker Application Container Engine.](https://blog.csdn.net/controllerha/article/details/78828584)
+1. [docker 无法正常启动：Failed to start Docker Application Container Engine](https://blog.csdn.net/qq_35981283/article/details/80857913)
+2. [docker 重启后启动失败 Failed to start Docker Application Container Engine.](https://blog.csdn.net/controllerha/article/details/78828584)
 
 还有一些其他的文章，其中方法包括删除`/var/lib/docker/`, 删除`/var/run/docker.sock`等，都没有作用。
 
@@ -36,7 +36,7 @@
 11月 15 00:23:54 delta-Lenovo-XiaoXin-700-15ISK docker[5169]: unknown shorthand flag: 'd' in -d
 ```
 
-猜想是.service文件配置`ExecStart=`错误，于是打开默认文件:
+猜想是.service 文件配置`ExecStart=`错误，于是打开默认文件:
 
 ```shell
 vim \lib\systemd\system\docker.service
@@ -48,7 +48,7 @@ vim \lib\systemd\system\docker.service
 11月 18 16:15:45 delta-Lenovo-XiaoXin-700-15ISK systemd[1]: docker.service: Start request repeated too quickly.
 ```
 
-重启过快的问题，于是想到修改.service配置文件的重启时间，想到直接修改.service文件如果出错不好复原，于是使用`systemctl edit`命令编辑覆盖执行的配置文件：
+重启过快的问题，于是想到修改.service 配置文件的重启时间，想到直接修改.service 文件如果出错不好复原，于是使用`systemctl edit`命令编辑覆盖执行的配置文件：
 
 ```shell
 systemctl edit docker.service
@@ -56,15 +56,15 @@ systemctl edit docker.service
 
 这时候，重点来了。。。在打开的配置文件里，出现了这么两句：
 
-```
+```toml
 [Service]
 ExecStart=
 ExecStart=/usr/bin/docker -d -H fd:// --registry-mirror=https://docker.mirrors.ustc.edu.cn
 ```
 
-我的天。。。问题就在这里，这两句的执行覆盖了默认设置，而可能是Docker在某次更新中取消了`-d`选项，而改用`dockerd`来启动daemon进程，而apt中还存储了这个配置，导致启动失败。。。最坑的是此前我曾在`/lib/systemd/system/`中搜索过`docker.service.d`文件夹而没找到，但是却存在这样一个配置文件。。。于是修改为：
+我的天。。。问题就在这里，这两句的执行覆盖了默认设置，而可能是 Docker 在某次更新中取消了`-d`选项，而改用`dockerd`来启动 daemon 进程，而 apt 中还存储了这个配置，导致启动失败。。。最坑的是此前我曾在`/lib/systemd/system/`中搜索过`docker.service.d`文件夹而没找到，但是却存在这样一个配置文件。。。于是修改为：
 
-```
+```toml
 [Service]
 ExecStart=
 ExecStart=/usr/bin/dockerd -D -H tcp://127.0.0.1:2376 --registry-mirror=https://docker.mirrors.ustc.edu.cn
@@ -74,4 +74,4 @@ ExecStart=/usr/bin/dockerd -D -H tcp://127.0.0.1:2376 --registry-mirror=https://
 
 Notice：
 
-- 在此处，`-H`参数 `tcp://127.0.0.1:2376`也可以使用unix套接字替换：`unix:///var/run/docker.sock`
+- 在此处，`-H`参数 `tcp://127.0.0.1:2376`也可以使用 unix 套接字替换：`unix:///var/run/docker.sock`

@@ -61,7 +61,7 @@ curl -X<VERB> '<PROTOCAL>://<HOST>:<PORT>/<PATH>?<QUERY_STRING>' -d '<BODY>'
 
 - `pretty
 
-### 索引
+### 索引 index
 
 #### 创建索引
 
@@ -274,7 +274,7 @@ GET /index/type/_count
 
 返回值中`count`字段表示查询到的数量
 
-### 搜索
+### 搜索 search
 
 ---
 
@@ -430,7 +430,7 @@ GET /index/type/_search
 
 `term`查询会查询我们指定的精确值。
 
-查找精确值且不需要进行评分计算时，可以使用`sonstant_score`查询来以非评分模式进行。
+查找精确值且不需要进行评分计算时，可以使用`constant_score`查询来以非评分模式进行。
 
 ```
 {
@@ -514,7 +514,7 @@ ES会对数据项进行分析，划分成多个更小的token；对于包含复�
 
 在`constant_score`域中使用可以跳过评分阶段
 
-### 集群 
+### 集群 cluster
 
 #### 集群健康
 

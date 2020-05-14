@@ -13,11 +13,9 @@
 - long
 - object
 - nested : 嵌套对象, 用于数组中的元素是对象的[{}, {}]
-  ip 即支持ipv4也支持ipv6
+- ip 即支持ipv4也支持ipv6
 - completion
-
 - binary
-
 - geo-point： 支持经纬度存储和距离范围检索
 - geo-shape：支持任意图形范围的检索，例如矩形和平面多边形
 
