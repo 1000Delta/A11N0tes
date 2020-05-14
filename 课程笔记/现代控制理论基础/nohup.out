@@ -1,6 +1,0 @@
-
-(gsd-xsettings:13636): xsettings-plugin-WARNING **: 17:24:34.237: Failed to get current display configuration state: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Name "org.gnome.Mutter.DisplayConfig" does not exist
-
-(gsd-xsettings:13636): xsettings-plugin-WARNING **: 17:24:34.259: Unable to register client: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.gnome.SessionManager was not provided by any .service files
-Gdk-Message: 12:52:18.262: gsd-xsettings: Fatal IO error 11 (资源暂时不可用) on X server :0.0.
-
