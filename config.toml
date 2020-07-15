@@ -1,0 +1,53 @@
+baseURL = "https://1000delta.top/"
+defaultContentLanguage = "zh" 
+theme = "ramium"
+# theme = "hugo.386"
+
+title = "千机网络"
+subtitle = "千机网络"
+
+# sectionPagesMenu = "main"
+
+[params]
+  copyrightname = "1000Delta"
+  githubprofile = "1000Delta"
+  # recordurl = "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=43030202001141"
+  # recordcode = "湘xxxx"
+
+  description = "A description for the meta tag of the site"
+  # googleSearch = "google-search-code"
+  showDate = true # make false if dont want to show date for evergeen articles
+  math = true # best to enable this in the front matter of a page
+  # githubLink = "rafed/ramium/"
+
+  tagsInHome = 40     # set zero to not show in home page
+  sectionsInHome = 5  # set zero to not show in home page
+  paginatePostsPerPage = 5
+  paginateTagsPerPage = 6
+
+[taxonomies]
+  tag = "tags"
+
+[markup.goldmark.renderer]
+    unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 2
+          
+  [[menu.main]]
+    name = "全部文章"
+    url = "/posts/"
+    weight = 3
+  
+  [[menu.main]]
+    name = "作者"
+    url = "/authors/"
+    weight = 4
