@@ -25,8 +25,9 @@ subtitle = "千机网络"
   paginatePostsPerPage = 5
   paginateTagsPerPage = 6
 
-[taxonomies]
-  tag = "tags"
+# [taxonomies]
+#   tag = "tags"
+#   section = "sections"
 
 [markup.goldmark.renderer]
     unsafe = true
@@ -36,18 +37,25 @@ subtitle = "千机网络"
     name = "首页"
     url = "/"
     weight = 1
-
-  [[menu.main]]
-    name = "标签"
-    url = "/tags/"
-    weight = 2
           
   [[menu.main]]
-    name = "全部文章"
+    name = "文章"
     url = "/posts/"
-    weight = 3
+    weight = 2
+    [[menu.main]]
+      parent = "文章"
+      name = "全部文章"
+      url = "/posts/"
+    [[menu.main]]
+      parent = "文章"
+      name = "标签"
+      url = "/tags/"
+    [[menu.main]]
+      parent = "文章"
+      name = "系列文章"
+      url = "/sections/"
   
   [[menu.main]]
     name = "作者"
     url = "/authors/"
-    weight = 4
+    weight = 3
