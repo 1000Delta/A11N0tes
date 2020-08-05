@@ -2,12 +2,8 @@
 title: "Logstash 学习记录"
 date: 2020-08-01T18:22:25Z
 description: ""
-tags:
-  - Elastic
-  - ELK
-  - Logstash
-categories:
-  - Logstash
+tags: [Elastic, ELK, Logstash]
+categories: [Logstash]
 ---
 
 # Logstash 学习记录
@@ -18,11 +14,9 @@ categories:
 
 ## Logstash 基本架构
 
-INPUTS
-
-FILTERS
-
-OUTPUTS
+- INPUTS
+- FILTERS
+- OUTPUTS
 
 ## 安装
 
@@ -268,7 +262,7 @@ Example:
 
 通过正则和类型等方式处理数据
 
-文档翻译：[地址](#)
+文档翻译：[Grok filter 插件](https://blog.1000delta.top/posts/elastic/logstash/plugins/filters/grok/)
 
 和 Grok 过滤器类似但是更简单的是 Dissect 过滤器，不使用正则而速度更快。
 
