@@ -1,5 +1,5 @@
 ---
-title: "Grok"
+title: "Grok filter 插件"
 date: 2020-07-14T08:43:12Z
 description: ""
 tags:
@@ -9,8 +9,6 @@ categories:
   - "Logstash"
 section: "Logstash 文档翻译"
 ---
-
-# Grok filter 插件
 
 - 插件版本：v4.3.0
 - 发布于：2020-02-21

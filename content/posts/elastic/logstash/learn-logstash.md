@@ -6,8 +6,6 @@ tags: [Elastic, ELK, Logstash]
 categories: [Logstash]
 ---
 
-# Logstash 学习记录
-
 > 参考资料：
 >
 > [一文快速上手 Logstash](https://cloud.tencent.com/developer/article/1353068)
