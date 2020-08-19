@@ -127,11 +127,11 @@ cmd := exec.Command("echo", "$(pwd)")
 
 ## 原理分析
 
-我们先查看参数的含义：
+`docker run` 参数的含义：
 
 ```sh
  -i, --interactive                    Keep STDIN open even if not attached
  -t, --tty                            Allocate a pseudo-TTY
 ```
 
-
+目前还没有找到相关资料，需要进一步理解 golang os/exec 和 Docker 的原理才能分析清楚。
