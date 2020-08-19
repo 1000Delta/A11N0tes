@@ -5,7 +5,7 @@ tools/webhook/webhook:
 build: tools/webhook/webhook
 
 .PHONY: run
-run:
+run: build
 	cd tools/webhook && GIN_MODE=release ./webhook 1>>access.log 2>>error.log &
 
 .PHONY: stop
