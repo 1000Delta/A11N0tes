@@ -1,0 +1,10 @@
+version: "2.0"
+
+services:
+  blog-webhook:
+    build: "./tools/webhook"
+    volumes:
+      - "./tools/webhook/config.toml:/config.toml:ro"
+    ports:
+      - "8088:8088"
+    command: "/webhook"

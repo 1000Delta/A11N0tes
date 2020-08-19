@@ -3,7 +3,7 @@
 # docker run --rm -it -v $(pwd):/src klakegg/hugo
 
 if [ $1 == "server" ]; then
-  docker run --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo $@
+  docker run --rm -v $(pwd):/src -p 1313:1313 klakegg/hugo server
 else
-  docker run --rm -it -v $(pwd):/src -u $UID:$GID klakegg/hugo $@
+  docker run --rm -v $(pwd):/src -u $UID:$GID klakegg/hugo $@
 fi
