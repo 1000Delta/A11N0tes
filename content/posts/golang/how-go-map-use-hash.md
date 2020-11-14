@@ -2,8 +2,8 @@
 title: "Go map 如何使用哈希值来寻址"
 date: 2020-08-21T01:46:44Z
 description: ""
-tags: []
-categories: []
+tags: [golang, hash]
+categories: [golang]
 ---
 
 ## 基本概念
