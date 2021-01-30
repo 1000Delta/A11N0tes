@@ -39,3 +39,6 @@ netsh interface portproxy show v4tov4
 --------------- ----------  --------------- ----------
 127.0.0.1       10022       172.29.181.252  22
 ```
+
+> 参考资料：
+> [windows 下端口映射（端口转发）- ThorpeTao](https://blog.csdn.net/i1j2k3/article/details/70228043)
