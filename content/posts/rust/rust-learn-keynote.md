@@ -1,7 +1,7 @@
 ---
 title: 'Rust 学习笔记'
-date: 2021-06-3
-lastmod: 2021-06-4
+date: 2021-06-03
+lastmod: 2021-06-06
 description: ''
 tags: [rust, learn]
 categories: [rust]
