@@ -44,6 +44,33 @@ lsp 是啥就不介绍了，服务器使用 rust 官方的 [rls](https://github.
 $ rustup +nightly component add rust-analyzer-preview
 ```
 
+然后对 vim-lsp 进行配置，此处我们替换运行命令到 rust-analyzer：
+
+```vim
+" 启动 rust-analyzer 弃用 RLS
+" 21/06/06 仅 nightly 提供
+if executable('rust-analyzer')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rust-analyzer',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rust-analyzer']},
+        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+```
+
+主要是替换 `cmd` 的内容为 nightly toolchain 的 rust-analyzer.
+
+---
+
+coc.nvim 配置 rust-analyzer，经过测试，不能将手动配置的 `coc-settings.json` 中的 `command` 替换成 `rustup run nightly rust-analyzer` 命令，因此这里我们直接使用 coc 官方提供的插件 `coc-rust-analyzer` 即可：
+
+- [coc-rust-analyzer -- Install](https://github.com/fannheyward/coc-rust-analyzer#install)
+
+如果安装的 coc.nvim 版本过低，安装插件会报错，此时先更新 coc.nvim 即可，vim-plug 更新 coc.nvim 请运行 `:PlugUpdate coc.nvim` 或者不指定名称全局更新。
+
+此时重新打开 rust 代码文件即可正常使用代码检查和自动补全功能，并且 rust-analyzer 对于类型方法可以正常补全，通过 (`.`) 即可触发。
+
 ## Dependency Management in Rust
 
 Cargo 使用 [Semantic Versioning](http://semver.org/) 作为版本号标准，并且在 dependency 中无前缀版本号表示的是不改变子版本，即 `0.8.3` 表示 `0.8.3` 直到 `0.9.0` 之前的版本，等同于 `^0.8.3`.
