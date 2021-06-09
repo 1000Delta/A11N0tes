@@ -1,7 +1,7 @@
 ---
 title: 'Rust 学习笔记'
 date: 2021-06-03
-lastmod: 2021-06-06
+lastmod: 2021-06-09
 description: ''
 tags: [rust, learn]
 categories: [rust]
@@ -12,6 +12,10 @@ categories: [rust]
   - [21/06/06 使用 rust-analyzer 替换 rls](#210606-使用-rust-analyzer-替换-rls)
 - [Dependency Management in Rust](#dependency-management-in-rust)
 - [statement and expression](#statement-and-expression)
+  - [expression - 表达式](#expression---表达式)
+  - [statement - 语句](#statement---语句)
+- [Ownership](#ownership)
+  - [Copy and Move](#copy-and-move)
 
 ## Install Rust Language Server for Neovim
 
@@ -77,14 +81,38 @@ Cargo 使用 [Semantic Versioning](http://semver.org/) 作为版本号标准，�
 
 ## statement and expression
 
-expression - 表达式
+### expression - 表达式
 
 - `{}` 代码块（block），代码块的最后一个表达式将作为返回值，如果没有则会返回一个空的元组（tuple）
 - `if`
   - 可以将 `if` 表达式用在赋值语句中，类似三元运算符：`x = if condition {5} else {6}`
 - `loop`
 
-statement - 语句：在 Rust 中，语句没有返回值，因此不能作为另一个语句的部分。
+### statement - 语句
+
+在 Rust 中，语句没有返回值，因此不能作为另一个语句的部分。
 
 - `let`
 - 任何表达式加上后缀分号（`;`）
+
+## Ownership
+
+### Copy and Move
+
+Rust 有两种数据分配（data assigning）的行为，复制和移动。
+
+> 数据分配的行为：
+>
+> - 将变量赋值到另一个变量
+> - 作为参数传入函数
+> - 作为返回值返回
+
+对于派生了 `Copy` Trait 的类型，对于数据的分配会进行值的复制。
+
+- 完全在栈上的数据类型（Stack-Only Data）可以对 `Copy` 进行派生；
+- 所有简单类型和简单类型构成的元组都已经派生了 `Copy` Trait。
+
+对于派生了 `Drop` Trait 的类型，任何数据分配都会进行值的移动（所有权移交）。
+
+- 移动之前持有数据的变量将会失效；
+- 任何派生了 `Drop` 的类型不能同时派生 `Copy`。
