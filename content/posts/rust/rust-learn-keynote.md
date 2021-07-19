@@ -16,6 +16,7 @@ categories: [rust]
   - [statement - 语句](#statement---语句)
 - [Ownership](#ownership)
   - [Copy and Move](#copy-and-move)
+  - [reference && borrowing](#reference--borrowing)
 
 ## Install Rust Language Server for Neovim
 
@@ -116,3 +117,13 @@ Rust 有两种数据分配（data assigning）的行为，复制和移动。
 
 - 移动之前持有数据的变量将会失效；
 - 任何派生了 `Drop` 的类型不能同时派生 `Copy`。
+
+### reference && borrowing
+
+Rust 中对变量进行引用，会创建一个数据的指针，但是指针并不持有被引用数据的所有权，因此在引用离开作用域时，不会导致数据被释放（执行 `drop`）。
+
+在 Rust 中这被称为借用（borrowing）。
+
+> 引用的规则：
+> - 在任何特定时间，你只能有一个可变引用**或者**任意个不可变引用；
+> - 引用必须有效。
