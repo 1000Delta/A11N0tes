@@ -125,5 +125,91 @@ Rust 中对变量进行引用，会创建一个数据的指针，但是指针并
 在 Rust 中这被称为借用（borrowing）。
 
 > 引用的规则：
+>
 > - 在任何特定时间，你只能有一个可变引用**或者**任意个不可变引用；
 > - 引用必须有效。
+
+## Annotation
+
+### 派生
+
+```rust
+#[derive(TRAIT_NAME)]
+```
+
+用于派生指定的 Trait，在 [附录 C：可派生的 Traits](https://doc.rust-lang.org/book/appendix-03-derivable-traits.html) 进行了相关的介绍。
+
+## function
+
+```rust
+fn func1(input: i32) {
+  input
+}
+
+fn func2(input: i32) {
+  return input;
+}
+```
+
+## control flow
+
+使用 `loop` 无条件循环，`while` 有条件循环，`for` 遍历迭代器
+
+## struct & method
+
+### struct
+
+定义结构体：
+
+```rust
+type Test {
+  uint32_field: u32,
+  int32_field: i32,
+  str_field: str,
+  bool_field: bool,
+}
+```
+
+字段初始化简写 & 结构体更新语法（struct update syntax):
+
+```rust
+fn build_test(uint32_field: u32) -> Test {
+  Test {
+    // uint32_field: uint32_field
+    uint32_field, // 同名的变量需要赋值给字段时可以简写，仅使用一个名称
+    // ...
+  }
+}
+
+let test1 = Test {
+  uint32_field: 1,
+  int32_field: -1,
+  // ...
+}
+
+// 通过 test1 中对应 field 的值填充 test2，
+// test2.int32_field == test1.int32_field
+let test2 = Test {
+  uint32_field: 2,
+  ..test1 // Struct Update Syntax
+}
+```
+
+### method
+
+```rust
+// method 语法，将函数包裹在 impl 语句中，
+// 需要以 &self 表示不可变引用，
+// 也可使用 &mut self 创建可变引用表示会修改内部的值
+impl Test {
+  fn test(&self) -> u32 {
+    self.uint32_field
+  }
+}
+```
+
+### associate function
+
+// TODO
+
+
