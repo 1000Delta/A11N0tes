@@ -210,6 +210,14 @@ impl Test {
 
 ### associate function
 
+```rust
+impl Test {
+  fn build_test() -> Test {
+    Test {}
+  }
+}
+```
+
 // TODO
 
 
