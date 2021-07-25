@@ -17,6 +17,7 @@ func main() {
 		if ctx.ContentType() != "application/json" ||
 			check_ua_valid(ctx.Request.UserAgent()) {
 			ctx.AbortWithStatus(http.StatusBadRequest)
+			return
 		}
 
 		GotoBlogDir()
@@ -25,6 +26,7 @@ func main() {
 
 		if _, err := io.WriteString(ctx.Writer, "ok"); err != nil {
 			ctx.AbortWithStatus(http.StatusInternalServerError)
+			return
 		}
 	})
 
