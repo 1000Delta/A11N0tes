@@ -4,6 +4,8 @@
 
 if [ $1 == "server" ]; then
   docker run --rm -v $(pwd):/src -p 1313:1313 klakegg/hugo server
+elif [ $1 == "new" ]; then
+  docker run --rm -v $(pwd):/src -u $UID:$GID klakegg/hugo new posts/$2
 else
   docker run --rm -v $(pwd):/src -u $UID:$GID klakegg/hugo $@
 fi
