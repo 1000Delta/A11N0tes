@@ -36,3 +36,7 @@ stop: webhook_stop
 .PHONY: clean
 clean:
 	-rm ${DIR_TOOL_BIN}/*
+
+.PHONY: init
+init:
+	git submodule update --init --recursive
