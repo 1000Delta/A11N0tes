@@ -18,7 +18,7 @@ webhook_run:
 
 .PHONY: webhook_stop
 webhook_stop:
-	@target=$$(ps | awk '{ if($$4=="./webhook"){print $$1}}'); \
+	@target=$$(ps | awk '/webhook/ {print $$1}'); \
 	if [ -n "$$target" ]; then \
 	echo "stop $$target"; \
 	kill $$target; \
