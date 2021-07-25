@@ -1,2 +1,7 @@
 port = 8088
 workdir = ""
+
+useragent = [
+  "git-oschina-hook",
+  "GitHub-Hookshot/de1ee30"
+]

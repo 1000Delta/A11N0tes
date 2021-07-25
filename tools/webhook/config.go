@@ -11,6 +11,7 @@ import (
 type Config struct {
 	PortNum int    `toml:"port"`
 	WorkDir string `toml:"workdir"`
+	UserAgents []string `tome:"useragent"`
 }
 
 // Port 将端口号数字加上 ":" 后返回

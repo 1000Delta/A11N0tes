@@ -15,7 +15,7 @@ func main() {
 
 		// 基本信息检查
 		if ctx.ContentType() != "application/json" ||
-			ctx.Request.UserAgent() != "git-oschina-hook" {
+			check_ua_valid(ctx.Request.UserAgent()) {
 			ctx.AbortWithStatus(http.StatusBadRequest)
 		}
 
