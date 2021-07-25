@@ -4,10 +4,12 @@ DIR_TOOL_WEBHOOK=${WORKDIR}/tools/webhook
 # build
 DIR_TOOL_BIN=${WORKDIR}/tools/bin
 
-.PHONY: webhook
-webhook:  ${DIR_TOOL_WEBHOOK}/*.go
+${DIR_TOOL_WEBHOOK}/*.go:  
 	cd ${DIR_TOOL_WEBHOOK} && \
 	go build
+
+.PHONY: webhook
+webhook: ${DIR_TOOL_WEBHOOK}/*.go
 
 .PHONY: webhook_run
 webhook_run:
