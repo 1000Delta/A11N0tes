@@ -40,12 +40,11 @@ subtitle = "千机小站"
           
   [[menu.main]]
     name = "文章"
-    url = "/posts/"
     weight = 2
     [[menu.main]]
       parent = "文章"
       name = "全部文章"
-      url = "/posts/"
+      url = "/all/"
     [[menu.main]]
       parent = "文章"
       name = "标签"
