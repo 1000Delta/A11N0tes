@@ -17,6 +17,14 @@ categories: [rust]
 - [Ownership](#ownership)
   - [Copy and Move](#copy-and-move)
   - [reference && borrowing](#reference--borrowing)
+- [Annotation](#annotation)
+  - [派生](#派生)
+- [function](#function)
+- [control flow](#control-flow)
+- [struct & method](#struct--method)
+  - [struct](#struct)
+  - [method](#method)
+  - [associate function](#associate-function)
 
 ## Install Rust Language Server for Neovim
 
