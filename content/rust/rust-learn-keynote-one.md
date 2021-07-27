@@ -1,9 +1,9 @@
 ---
-title: 'Rust 学习笔记'
+title: 'Rust 学习笔记一'
 date: 2021-06-03
-lastmod: 2021-07-21
+lastmod: 2021-07-27
 description: ''
-tags: [rust, learn]
+tags: [rust, learn, ownership]
 categories: [rust]
 # image: "/image/blog-pic.jpg"
 ---
@@ -220,12 +220,11 @@ impl Test {
 
 ```rust
 impl Test {
+  // 参数列表不包含 &self 引用，即表示是一个关联函数
   fn build_test() -> Test {
     Test {}
   }
 }
 ```
 
-// TODO
-
-
+关联函数和其他语言中的静态方法类似，使用通过指定 `Test::build_test()` 进行调用。
