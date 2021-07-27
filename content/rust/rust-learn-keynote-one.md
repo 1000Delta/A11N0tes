@@ -203,6 +203,19 @@ let test2 = Test {
 }
 ```
 
+特殊的 struct，tuple struct（元组结构体）：
+
+```rust
+// 定义一个元组结构体类型
+struct TestTupleSrt(i32, String);
+
+fn main() {
+  let ts = TestTupleSrt(1, String::from("test"));
+  // 通过 . 和下标确定获取的字段
+  println!("{}, {}", ts.0, ts.1) // 输出 "1, test"
+}
+```
+
 ### method
 
 ```rust
