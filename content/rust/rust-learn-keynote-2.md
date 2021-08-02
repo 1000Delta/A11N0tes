@@ -1,5 +1,5 @@
 ---
-title: "Rust 学习笔记二"
+title: "Rust 学习笔记二 | enum & match"
 date: 2021-07-27
 lastmod: 2021-08-03
 description: ""

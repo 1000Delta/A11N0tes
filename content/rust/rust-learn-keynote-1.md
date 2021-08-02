@@ -1,5 +1,5 @@
 ---
-title: 'Rust 学习笔记一'
+title: 'Rust 学习笔记一 | 安装 language server & Rust 相关概念'
 date: 2021-06-03
 lastmod: 2021-07-27
 description: ''
