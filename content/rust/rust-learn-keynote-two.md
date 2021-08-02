@@ -1,7 +1,7 @@
 ---
 title: "Rust 学习笔记二"
 date: 2021-07-27
-lastmod: 2021-07-29
+lastmod: 2021-08-03
 description: ""
 tags: []
 categories: []
@@ -10,7 +10,7 @@ categories: []
 
 - [enum](#enum)
   - [Option enum](#option-enum)
-  - [`match` expression](#match-expression)
+- [`match` expression](#match-expression)
   - [`if let` expression](#if-let-expression)
 
 ## enum
@@ -66,7 +66,7 @@ let s = Some(some_value);
 let n: Option<i32> = None;
 ```
 
-### `match` expression
+## `match` expression
 
 `match` 表达式类似于其他语言的 `switch`，可以用于对变量进行模式匹配，然后执行对应的**表达式**：
 
@@ -84,6 +84,8 @@ fn get_order_or_value(v: TestMatchEnum) -> i32 {
     },
     // match 表达式也用于从枚举变量中获取值
     TestMatchEnum::TestVariant(value) => value,
+    // 不仅可以提取值，也可以用于匹配特殊值
+    TestMatchEnum
   }
 }
 
@@ -117,5 +119,16 @@ fn print_weekday_str(week_num: i32) {
 
 ### `if let` expression
 
-// TODO
+用于简化仅需要匹配单个模式的 `match` 表达式，不符合模式的结果将会被忽略。
 
+```rust
+let v = Some(2)
+// 用于匹配单个值
+if let Some(2) = v {
+  println!("best match!");
+}
+// 也可以用于提取变量枚举的特殊变量的值
+if let Some(v_in) = v {
+  println!("v in enum = {}", v_in); // v in enum = 2
+}
+```
