@@ -1,11 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
-# docker run --rm -it -v $(pwd):/src klakegg/hugo
+ctnr=docker
+
+for i in {"docker","podman"}; do
+	type $i
+	if [ $? == 0 ]; then
+		ctnr=$i
+		echo "current container tools is $ctnr"
+		break
+	fi
+done
+
+# $ctnr run --rm -it -v $(pwd):/src docker.io/klakegg/hugo
 
 if [ $1 == "server" ]; then
-  docker run --rm -v $(pwd):/src -p 1313:1313 klakegg/hugo server
+	$ctnr run --rm -v $(pwd):/src -p 1313:1313 docker.io/klakegg/hugo server
 # elif [ $1 == "new" ]; then
-#   docker run --rm -v $(pwd):/src -u $UID:$GID klakegg/hugo new posts/$2
+#   $ctnr run --rm -v $(pwd):/src -u $UID:$GID docker.io/klakegg/hugo new posts/$2
 else
-  docker run --rm -v $(pwd):/src -u $UID:$GID klakegg/hugo $@
+	$ctnr run --rm -v $(pwd):/src -u $UID:$GID docker.io/klakegg/hugo $@
 fi
